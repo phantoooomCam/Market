@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Upii-Market/Registro</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+            <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='desing_Usuarios.css') }}">
+        </head>
+    <body>
+        <header>
+            <button id="botonRegresar">Regresar</button>
+        </header>
+        <br>
+        <main>
+            <div class="contenedor">
+                <form action="/registrarse" class="formulario" id="formulario" method="POST">
+                    <h1 class="titulo_form">Registro</h1>
+
+                    <!--Grupo: nombre-->
+                    <div class="formulario_grupo" id="grupo_nombre">
+                        <label for="nombre" class="formulario_label">Nombre(s)</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input" id="nombre" name='nombre' type="text" placeholder="nombre" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">Error el nombre unicamente puede contener caracteres A-z</p>
+                    </div>    
+
+                    <!--Grupo: apellidos-->
+                    <div class="formulario_grupo" id="grupo_apellidos">
+                        <label for="apellidos" class="formulario_label">Apellidos</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input" id="apellidos" name='apellidos' type="text" placeholder="apellidos" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">Error el apellido unicamente puede contener caracteres A-z</p>
+                    </div>
+                    
+                    <div class="formulario_grupo" id="grupo_telefono">
+                        <label for="telefono" class="formulario_label">Teléfono</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input" id="telefono" name='telefono' type="number" placeholder="telefono" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">Error, requiere 10 caracteres numericos 0-9</p>
+                    </div>
+
+                    <div class="formulario_grupo" id="grupo_matricula">
+                        <label for="matricula" class="formulario_label">Matrícula</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input" id="matricula" name='matricula' type="number" placeholder="matricula" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">Error el nombre unicamente puede contener caracteres numericos 0-9</p>
+                    </div>
+
+                    <div class="formulario_grupo" id="grupo_carrera">
+                        <label for="carrera" class="formulario_label">Carrera</label>
+                        <div class="formulario_carrera-input">
+                            <div class="contenido_select">
+                                <select class="carrera" id='carrera' name="carrera" required>
+                                    <div class="opciones" id="opciones">
+                                        <option class="select_option">Mecatronica</option>
+                                        <option class="select_option">Bionica</option>
+                                        <option class="select_option">Telematica</option>
+                                        <option class="select_option">Energia</option>
+                                        <option class="select_option">ISISA</option>    
+                                    </div>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo" id="grupo_email">
+                        <label for="email" class="formulario_label">Email</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input" id="email" name='email' type="email" placeholder="correo electronico" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">Direccion de correo no valida</p>
+                    </div>
+
+                    <div class="formulario_grupo" id="grupo_password">
+                        <label for="password" class="formulario_label">Contraseña</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input" id="password" name='password' type="password" placeholder="contraseña" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">Password requiere 8 digitos, al menos un caracter mayusculo, minusculo y numerico</p>
+                    </div>
+
+
+                    <div class="formulario_mensaje" id="formulario_mensaje">
+                        <p><i class="fa-solid fa-triangle-exclamation"></i><b>Error: Rellene correctamente</b></p>
+                    </div><br>
+
+                    <div class="formulario_grupo formulario_grupo-btn-enviar">
+                        <button type="submit" id="BotonAceptar" class="BotonAceptar">Enviar</button>
+                        <p class="formulario_mensaje_exito" id="formulario_mensaje_exito">Formulario enviado exitosamente!</p>
+                    </div>
+                    
+                </form>
+            </div>
+        </main>
+        <br>
+        <br>
+        <script src="{{ url_for('static', filename='diseño_java.js') }}"></script>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    </body>
+</html>

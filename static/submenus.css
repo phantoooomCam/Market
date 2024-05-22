@@ -1,0 +1,264 @@
+body, html{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+main{
+    background-color: #AFB0B5;
+}
+.submenus_header{
+    background: black;
+    text-align: center;
+    color: white;
+    width: 100%;
+    font-family: Raleway, sans-serif;
+}
+.contenedor{
+    display:inline-flex ;
+    width: 100%;
+    overflow: hidden;
+}
+.columna{
+    flex:1;
+    padding-left: 1px;
+    padding-top: 10px;
+    padding-right: 1px;
+    color: white;
+    border: 1px transparent;
+    width: 100%;
+}
+.buscador{
+    background: black;
+    position: relative;
+    width: 100%;
+}
+.titulo_comidas{
+    background: url("pizza2.jpg");
+    text-align: center;
+    width: 100%;
+}
+.titulo_material{
+    background: url("Material24.jpg");
+    text-align: center;
+    width: 100%;
+}
+.titulo_snacks{
+    background: url("galletas2.jpg");
+    text-align: center;
+    width: 100%;
+}
+.titulo_otros{
+    background: url("otros5.jpg");
+    text-align: center;
+    width: 100%;
+    color: #708090;
+    background-size: 100% 100%;
+}
+.nombre_submenus{
+    font-size: 100px;
+    padding-top: 60px; 
+    padding-bottom: 0.5px;
+    padding-left: 32px;
+}
+h3{
+    text-align: center;
+    padding-left: 70px;
+    margin-bottom: 35px;
+}
+.Upii-Market-otrosh-3{
+   font-weight: bold;
+}
+.barra_busqueda{
+    padding-bottom: 10px;
+    padding-left: 1px;
+    padding-right: 180px;
+    position: absolute;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    top: 80px;  
+}
+.busqueda{
+    outline: none;
+    box-sizing: border-box;
+    height: 61px;
+    width: 547px;
+    padding: 0 30px;
+    color: black;
+    border-radius: 100px;
+    font-size: 20px;
+    border: 1px solid white;
+}
+.boton_buscar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid white;
+    margin-right: 175px;
+    width: 58px;
+    height: 62px;
+    background: black;
+    line-height: 70px;
+    border-radius: 87px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+.buscar_header{
+    color: white;
+    font-size: 25px;  
+     font-variation-settings:
+   'FILL' 0,
+   'wght' 400,
+   'GRAD' 200,
+   'opsz' 48
+}
+.fila{
+    position: absolute;
+    background: white;
+    padding: 2px;
+    margin-top: 50%;
+    border: 1px solid black;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+.boton_buscar:hover{
+    width: 65px;
+    height: 68px;
+    line-height: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.nav_menu{
+    padding: 0.5px;
+    margin: 0.5px;
+    color: black;
+    width: 100%;
+    margin-left: 0.5px;
+    margin-right: 0.5px;
+}
+.nav_menu_lista{
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.btn_car, .btn_home, .btn_account, .btn_power, .btn_cake, .btn_otros, .btn_pizza{
+    background-color: transparent;
+    border: transparent;
+    color: black;
+    cursor: pointer;
+}
+.car_icon, .cuenta_icon, .home_icon, .power_icon, .cake_icon, .otros_icon, .pizza_icon{
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 150,
+  'opsz' 40
+}
+.desc_icon{
+    display: block;
+    text-align: center;
+}
+.contenedor_main{
+    display:inline-flex;
+    width: 90%;
+    color: black;
+    font-family: Hind, sans-serif;
+    margin-left: 70px;
+    overflow: hidden;
+    background-color: #AFB0B5;
+}
+.columna_main{
+    flex:1;
+    border: 4px solid #AFB0B5;
+    color: black;
+    width: 50%;
+}
+.contenedor_producto{
+    display: flex;
+    background: #F3F3ED;
+    padding: 15px;
+    border-radius: 10px;
+}
+.columna__{
+    flex: 1;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.col1{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    padding-right: 200px;
+    width: 100%;
+}
+.col1 img{
+    width: 370px;
+    height: 270px;
+    display: none;
+}
+.col2{
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.col2{
+    .producto__{
+        font-size: 19px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    .precio__{
+        font-size: 17px;
+        line-height: 1.5;
+    }
+    .vendedor__{
+        font-size: 17px;
+        line-height: 1.5;
+    }
+    .disponibilidad__{
+        font-size: 17px;
+        line-height: 1.5;
+    }
+}
+.opciones_imagen{
+    display: flex;
+}
+.opciones_imagen button{
+    padding-left: 80px;
+    padding-right: 79.8px;
+    border: 0.5px solid black;
+    cursor: pointer;
+}
+.btn_agregar_carrito{
+    margin-top: 50px;
+    cursor: pointer;
+    color: black;
+    background-color: #0DD954;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 60px;
+}
+.btn_agregar_carrito:hover{
+    background-color: #0DC54D;
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    padding: 15px 15px;
+}

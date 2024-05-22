@@ -1,0 +1,318 @@
+header{
+    text-align: center;
+    background: url("UpiitaFondo.jpeg");
+    color: white;
+    background-size: 100% 100%;
+    font-family: Raleway, sans-serif;
+    padding-bottom: 0.5px;
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0px;
+}
+.contenedor{
+    display: flex;
+}
+.columna_header{
+    flex:1;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    margin-right: 23px;
+    border: 1px transparent;
+}
+.fila{
+    margin-top: 0px;
+    padding: 4px;
+    border: 0px transparent;
+    bottom: 0;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    margin-left: 0.5px;
+    margin-right: 0.5px;
+}
+.Upii-Market{
+    font-size: 100px;
+    padding-top: 60px; 
+    padding-bottom: 60px;
+    padding-left: 32px;
+    font-family:'Trebuchet MS';
+}
+.barra_navegacion{
+    position: absolute;
+    text-align: right;
+    background: url("bg.jpg");
+}
+body{
+    background-color: #fffafa;
+}
+.opciones_main{
+    color: white;
+    text-align:center;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+.barra_busqueda{
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 180px;
+    position: relative;
+    top: 80px;
+}
+.busqueda{
+    outline: none;
+    box-sizing: border-box;
+    height: 61px;
+    width: 547px;
+    padding: 0 30px;
+    color: black;
+    border-radius: 100px;
+    font-size: 20px;
+    border: 1px solid black;
+}
+.boton_buscar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid black;
+    margin-right: 175px;
+    width: 58px;
+    height: 62px;
+    background: black;
+    line-height: 66px;
+    border-radius: 87px;
+    text-align: center;
+    cursor: pointer;
+    transition: .4s;
+}
+.boton_buscar:hover{
+    width: 65px;
+    height: 68px;
+    line-height: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.opciones{
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+}
+.nav_menu{
+    text-align: center;
+    padding: 0.5px;
+    margin: 0.5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: white;
+    width: 100%;
+    margin-left: 0.5px;
+    margin-right: 0.5px;
+}
+.nav_menu_lista{
+    text-align: center;
+    display: inline-block;
+    width: 21%;
+}
+.btn_car, .btn_home, .btn_account, .btn_sell{
+    background-color: transparent;
+    border: transparent;
+    color: white;
+    cursor: pointer;
+}
+.car_icon, .cuenta_icon, .home_icon, .sell_icon{
+    text-align: center;
+    font-size: 30px;
+    font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 50,
+  'opsz' 40
+}
+.desc_icon{
+    display: block;
+    text-align: center;
+}
+.submenus{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.clasificacion{
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+.clasificacion_lista{
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 23%;
+    color: white;
+}
+.btn-{
+    color: white;
+    padding: 70px 110px;
+    border: 0.5px solid black;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 7px;
+    font-weight: 520;
+    text-shadow: -0.4px -0.4px 0 #000,  
+    0.4px -0.4px 0 #000,
+   -0.4px  0.4px 0 #000,
+    0.4px  0.4px 0 #000;
+    transition: 0.2s;
+}
+.btn__otros{
+    background: url("otros.jpg");
+    background-size: 100% 100%;
+}
+.btn__comida{
+    background: url("pizza.jpg");
+    background-size: 100% 100%;
+}
+.btn__snack{  
+    background: url("galletas.jpg");
+    background-size: 100% 100%;
+}
+.btn__material{
+    background:url("Material.jpg");
+    background-size: 100% 100%;
+}
+.btn-:hover{
+    padding: 73px 113px;
+    font-size: 26px;
+}
+.Main2{
+    color:aliceblue;
+    background-color: rgb(93, 112, 176);
+    padding: 20px;
+}
+.MainTitulo{
+    font-size: 60px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family:'Trebuchet MS';;
+}
+.Intro{
+    text-align: center;
+    font-family:Verdana;
+    font-size: 13px;
+    padding-top: 5px;   
+}
+.columna_mensaje{
+    flex: 1;
+    font-weight: 420;
+    padding: 3px;
+    border: 1px solid #ccc;
+    font-family: Hind, sans-serif;
+    width: 50%;
+    font-size: 30px;
+    border: 0px solid;
+    text-align: center;
+}
+.comprador_info, .vendedor_info{
+    font-size: 20px;
+    padding: 5px;
+    font-weight: 120;
+    font-family: Hind, sans-serif;
+    text-align: left;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+.Main3{
+    background-color: #fffafa;
+    padding: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.buscar_header{
+   color:white;
+   font-size: 25px;  
+    font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 48
+}
+.Main3_titulo{
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 550;
+    font-family: Hind, sans-serif;
+}
+.login_icon, .email_icon, .account_icon, .search_icon, .shop_icon, .person_icon{
+    text-align: center;
+}
+.home2-icon, .car2-icon, .account2_icon{
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+.btn-home, .btn-cuenta, .btn-car{
+    position: absolute;
+    width: 5px;
+    margin: 10px;
+    height: 0;
+    color: white;
+    border-color: transparent;
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+.login_icon-, .email_icon-, .account_icon-, .search_icon-, .shop_icon-, .person_icon-{
+    font-size: 80px;
+    margin: 10px;
+  font-variation-settings: 
+  'FILL' 1,
+  'wght' 50,
+  'GRAD' 100,
+  'opsz' 10
+}
+.contenedor_titulo{
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20px;
+}
+.contenedor_2{
+    padding-top: 35px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px; 
+    font-size: 20px;
+}
+.columna{
+    border: 1px transparent;
+    font-family: DM Sans, sans-serif;
+}
+.columna_intro{
+    font-weight: 550;
+    font-size: 20px;
+    font-family: DM Sans, sans-serif;
+}
+.descripcion{
+    font-weight: 240;
+    font-family: DM Sans, sans-serif;   
+}
+.apartar_icon, .precio_icon, .interact_icon, .add_icon, .seek_icon{
+    font-size: 80px;
+    margin: 10px;
+  font-variation-settings: 
+  'FILL' 0,
+  'wght' 250,
+  'GRAD' 100,
+  'opsz' 10
+}
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 15px 15px;
+    font-family: Raleway, sans-serif;
+}

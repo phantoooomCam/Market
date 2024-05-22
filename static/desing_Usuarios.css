@@ -1,0 +1,291 @@
+header, main{
+    overflow: hidden;
+}
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body{
+    background: linear-gradient(to right, #623AA2, #f97794); 
+}
+
+.contenedor{
+    margin-left: 33%;
+    margin-right: 30%;
+    width: 100%;
+    overflow: hidden;
+}
+form{
+    position: relative;
+    z-index: 1;
+    background: white;
+    width: 28%;
+    border-radius: 20px;
+    padding: 30px 30px 30px 30px;
+    text-align: left;
+    font-family: Lato, sans-serif;
+    overflow: hidden;
+    box-shadow:0px 0px 10px rgba(0, 0, 0, 0.1); 
+    margin-top: 70px;
+}
+.titulo_form{
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 4px;
+    font-family: DM Sans, sans-serif;
+}
+.head{
+    background-color: cornflowerblue;
+    padding-bottom: 20px;
+}
+h1{
+    text-align: center;
+    font-family: Nunito, sans-serif;
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+    background-color: white;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+header{
+    text-align: center;
+    color: white;
+    padding: 9px;
+    font-size: 32px;
+}
+.HeaderTable{
+    background-color: #FF637D;
+}
+body{
+    background-color: #f7edef;
+}
+#B{
+    display: inline-block;
+    padding: 3px;
+    margin: 3px;
+    position: relative;
+}
+.BotonAgregar{
+    float: right;
+    position: relative;
+    clear: both;
+    cursor:pointer;
+    bottom: 20px;
+    right: 50px;
+    display: flex;  
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.formulario{
+    display: grid;
+    gap: 20px;
+}
+.formulario_label{
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+.formulario_grupo-input{
+    position: relative;    
+}
+.formulario_input{
+    width: 85%;
+    background: lightgray;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    height: 42px;
+    line-height: 45px;
+    appearance: none;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+.formulario_input:focus{
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163,0.4);
+}
+.formulario_input-error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+.formulario_input-error-activo{
+    display: block;
+}
+input[type=number]::-webkit-inner-spin-button,
+::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+.formulario_validacion-estado{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+.formulario_mensaje{
+    height: 45px;
+    background-color: #F66060;
+    line-height: 45px;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+.formulario_mensaje-activo{
+    display: block;
+}
+.formulario_mensaje p{
+    margin: 0;
+}
+.formulario__grupo-btn-enviar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.formulario__grupo-btn-enviar{
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+    background-color: none;
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.formulario_mensaje_exito{
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+.formulario_mensaje_exito-activo{
+    display: block;
+}
+.formuladio_grupo-btn-enviar{
+    display: flex;
+	align-items: center;
+
+}
+.select_carrera{
+    font-family: DM Sans, sans-serif;
+}
+.formulario_carrera-input{
+    margin: auto;
+    width: 100%;
+    position: relative;
+}
+.carrera{
+    background: lightgrey;
+    width: 50%;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0,.16);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;/*empujar a la izquerda y el icono a la derecha*/
+    padding-left: 10px;
+    transition: 0.2s ease all;
+    margin-bottom: 8px ;
+    padding: 10px 15px;
+    font-size: 15px;
+    position: relative;
+    border: 2px solid transparent  
+}
+.carrera:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0,.16);
+    border: 2px solid #0075ff; 
+}
+.carrera .select_option{
+    border-radius: 5px;
+    background: lightgray;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.16);
+    width: 200%;
+    font-size: 15px;
+    padding: 10px;  
+}
+.carrera .opciones:hover{
+    background: #0075FF;
+    color:white;
+    border: none;
+    border-radius: 5px;
+}
+.formulario_grupo-btn-enviar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.BotonAceptar{
+    padding: 15px 60px;
+    display: flex;
+    font-family: Lato, sans-serif;
+    font-size: 18px;
+    background: #6236ff;
+    color:white;
+    cursor: pointer;
+    border-radius: 20px;
+    border: transparent;
+    align-items: center;
+}
+.BotonSesion{
+    padding: 15px 60px;
+    display: flex;
+    margin-top: 25px;
+    font-family: Lato, sans-serif;
+    font-size: 18px;
+    background: #6236ff;
+    color:white;
+    cursor: pointer;
+    border-radius: 20px;
+    border: transparent;
+    align-items: center;
+}
+/*Estilos para validacion*/
+.formulario_grupo-correcto .formulario_validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+.formulario_grupo-incorrecto .formulario_label{
+    color: #BB2929;
+}
+.formulario_grupo-incorrecto .formulario_validacion-estado{
+    color: #BB2929;
+    opacity: 1;
+}
+.formulario_grupo-incorrecto .formulario_input{
+    border: 3px solid #BB2929;
+}
+
+#botonRegresar {
+    position: absolute;
+    left: 50px; 
+    top: 50px; 
+    background-color: transparent; 
+    color: white; 
+    font-size: 15px;
+    padding: 15px 50px; 
+    border-radius: 20px; 
+    border: 2px solid white; 
+    cursor: pointer;
+    transition: transform 0.2s; 
+}
+
+#botonRegresar:hover {
+    transform: scale(1.1); /* Agrandar el botón al pasar el cursor sobre él */
+}

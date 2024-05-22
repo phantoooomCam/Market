@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upii-Market/Selling</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="Selling.css">
+    </head>
+    <body>
+        <div class="contenedor">
+            <div class="tabla_header">
+                <h2>Mis Productos</h2>
+                <button class="boton_regresar btn_home"><span class="material-symbols-outlined home_icon">
+                    home
+                    </span><span class="desc_icon"></span></button>     
+                <button class="agregar btn_agregar">Agregar</button>
+                    <div class="buscar">
+                    <input type="search" class="input_buscar" placeholder="buscar">
+                    <span class="material-symbols-outlined buscar_icon">
+                        search
+                        </span>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>producto <span class="material-symbols-outlined iconx">unfold_more</span></th>
+                        <th>clasificacion<span class="material-symbols-outlined iconx">unfold_more</span></th>
+                        <th>precio <span class="material-symbols-outlined iconx">unfold_more</span></th>
+                        <th>disponibilidad <span class="material-symbols-outlined iconx">unfold_more</span></th>
+                        <th>oferta <span class="material-symbols-outlined iconx">unfold_more</span></th>
+                        <th>imagen<span class="material-symbols-outlined iconx">unfold_more</span></th>
+                        <th>operacion<span class="material-symbols-outlined iconx">unfold_more</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>producto01</td>
+                        <td>clasificacion01</td>
+                        <td>precio01</td>
+                        <td>disponibilidad01</td>
+                        <td>oferta01</td>
+                        <td>imagen01</td>
+                        <td><span class="material-symbols-outlined edit_icon">edit</span> <span class="material-symbols-outlined delete_icon">
+                            delete
+                            </span></td>
+                    </tr>
+                    <tr>
+                        <td>producto01</td>
+                        <td>clasificacion01</td>
+                        <td>precio01</td>
+                        <td>disponibilidad01</td>
+                        <td>oferta01</td>
+                        <td>imagen01</td>
+                        <td><span class="material-symbols-outlined edit_icon">edit</span> <span class="material-symbols-outlined delete_icon">
+                            delete
+                            </span></td>
+                    </tr>
+                    <tr>
+                        <td>producto01</td>
+                        <td>clasificacion01</td>
+                        <td>precio01</td>
+                        <td>disponibilidad01</td>
+                        <td>oferta01</td>
+                        <td>imagen01</td>
+                        <td><span class="material-symbols-outlined edit_icon">edit</span> <span class="material-symbols-outlined delete_icon">
+                            delete
+                            </span></td>
+                    </tr>
+                    <tr>
+                        <td>producto01</td>
+                        <td>clasificacion01</td>
+                        <td>precio01</td>
+                        <td>disponibilidad01</td>
+                        <td>oferta01</td>
+                        <td>imagen01</td>
+                        <td><span class="material-symbols-outlined edit_icon">edit</span> <span class="material-symbols-outlined delete_icon">
+                            delete
+                            </span></td>
+                    </tr>
+                    <tr>
+                        <td>producto01</td>
+                        <td>clasificacion01</td>
+                        <td>precio01</td>
+                        <td>disponibilidad01</td>
+                        <td>oferta01</td>
+                        <td>imagen01</td>
+                        <td><span class="material-symbols-outlined edit_icon">edit</span> <span class="material-symbols-outlined delete_icon">
+                            delete
+                            </span></td>
+                    </tr>
+                    <tr>
+                        <td>producto01</td>
+                        <td>clasificacion01</td>
+                        <td>precio01</td>
+                        <td>disponibilidad01</td>
+                        <td>oferta01</td>
+                        <td>imagen01</td>
+                        <td><span class="material-symbols-outlined edit_icon">edit</span> <span class="material-symbols-outlined delete_icon">
+                            delete
+                            </span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="tabla_footer">
+                <p>Vendedor: XXXXXXX XXXXXXXX</p>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='Selling.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="es">
+    <meta charset="UTF-8">
+    <title>Upii-Market/Shopping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='Shopping.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="columna shopping">
+            <div class="contenedor_tab">
+                <div class="tab_header">
+                    <button class="btn_home">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                            </span>
+                    </button>
+                    <h2  class="titulo">Shopping</h2>
+                </div>
+                <table class="tabla">
+                    <thead>
+                        <th></th>
+                        <th>producto</th>
+                        <th>cantidad</th>
+                        <th>subtotal</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="imagen"><img src="pizza_costco_prueba.jpeg"></td>
+                            <td class="info">
+                                <div class="info2">    
+                                    <p class="nombre_producto">Rebanada pizza costco</p>
+                                    <p>$20 c/u</p>
+                                    <p>Comida</p>
+                                    <p>Vendedor</p>
+                                </div>
+                            <td class="cantidad">
+                                <div class="cantidad2">
+                                    <button class="btn_menos">
+                                        <span class="material-symbols-outlined menos_icon">
+                                            remove
+                                            </span>
+                                    </button>
+                                    <span class="can">1</span>
+                                    <button class="btn_mas"><span class="material-symbols-outlined mas_icon">
+                                        add
+                                        </span></button>
+                                </div>
+                            </td>
+                            <td class="subtotal">
+                                <div class="subtotal2">
+                                    $<p>0.00</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="imagen"><img src="galletas_cotsco_prueba.jpeg"></td>
+                            <td class="info">
+                                <div class="info2">
+                                    <p class="nombre_producto">Galleta costco</p>
+                                    <p>$10 c/u</p>
+                                    <p>Snacks</p>
+                                    <p>Vendedor</p>
+                                </div>
+                            <td class="cantidad">
+                                <div class="cantidad2">                             <button class="btn_menos">
+                                    <span class="material-symbols-outlined menos_icon">
+                                        remove
+                                        </span>
+                                    </button>
+                                    <span class="can">1</span>
+                                    <button class="btn_mas"><span class="material-symbols-outlined mas_icon">
+                                        add
+                                        </span></button>
+                                </div>
+                            </td>
+                            <td class="subtotal">
+                                <div class="subtotal2">
+                                    $<p>0.00</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="imagen"><img src="sticker_nike.jpg"></td>
+                            <td class="info">
+                                <div class="info2">
+                                    <p class="nombre_producto">Sticker nike</p>
+                                    <p>$3 c/u</p>
+                                    <p>Otros</p>
+                                    <p>Vendedor</p>
+                                </div>
+                            <td class="cantidad"> 
+                                <div class="cantidad2">                               
+                                    <button class="btn_menos">
+                                    <span class="material-symbols-outlined menos_icon">
+                                        remove
+                                        </span>
+                                    </button>
+                                    <span class="can">1</span>
+                                    <button class="btn_mas"><span class="material-symbols-outlined mas_icon">
+                                        add
+                                        </span>
+                                    </button>
+                                </div>
+                            </td>
+                            <td class="subtotal">
+                                <div class="subtotal2">
+                                    $<p>0.00</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="columna summ">
+            <div class="titulo_sum">Pago de pedido</div>
+            <div class="Total_tab">
+                <table>
+                    <th></th>
+                    <th></th>
+                    <tbody>
+                        <tr>
+                            <td>Comida</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Snack</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Material</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Otros</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td class="total_final">Total: </td>
+                            <td class="total_final">$0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn_final">
+                <button class="btn_comprar">Comprar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='Shopping.js') }}"></script>
+</body>
+</html>

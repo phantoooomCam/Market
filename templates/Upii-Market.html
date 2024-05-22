@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upii-Market</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='Upii-Market.css') }}">
+        <script src="{{ url_for('static', filename='botones_redirecciones.js') }}"></script>
+        
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <div class="columna_header">
+                    <h1 class="Upii-Market">Upii-Market</h1>
+                    <h3 class="slogan"></h3>
+                </div class="columna_header">
+                <div class="columna_header">
+                    <div class="barra_busqueda">
+                        <input class="busqueda" type="search" placeholder="Buscar">
+                        <button class="boton_buscar">
+                            <samp class="material-symbols-outlined buscar_header">search</samp>
+                        </button>
+                    </div>
+                </div>
+            </div>   
+            <div class="fila">
+                <ul class="nav_menu">
+                    <li class="nav_menu_lista"><button class="btn_home"><span class="material-symbols-outlined home_icon">
+                        home
+                        </span><span class="desc_icon">home</span></button></li>
+                    <li class="nav_menu_lista"><button class="btn_account"><span class="material-symbols-outlined cuenta_icon">
+                        account_circle
+                        </span><span class="desc_icon">profile</span></button></li>
+                    <li class="nav_menu_lista"><button class="btn_car"><span class="material-symbols-outlined car_icon">
+                        shopping_cart
+                        </span><span class="desc_icon">shooping</span></button></li>
+                    <li class="nav_menu_lista"><button class="btn_sell"><span class="material-symbols-outlined sell_icon">
+                        sell
+                        </span><span class="desc_icon">selling</span></button></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <div class="submenus">  
+                <ul class="clasificacion">
+                    <li class="clasificacion_lista"><button class="btn- btn__material">
+                        <h2 class="Material lista_clasf">Material</h2>
+                        </button>
+                    </li>
+                    <li class="clasificacion_lista"><button class="btn- btn__comida">
+                        <h2 class="Comida lista_clasf">Comida</h2>
+                        </button>
+                    </li>
+                    <li class="clasificacion_lista"><button class="btn- btn__snack">
+                        <h2 class="Snacks lista_clasf">Snacks</h2>
+                        </button>
+                    </li>
+                    <li class="clasificacion_lista"><button class="btn- btn__otros">
+                        <h2 class="Otros lista_clasf">Otros</h2>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="Main2">
+                <div class="MainTitulo">Upii-Market
+                    <div class="Intro">
+                        ¡El website compra-venta de UPIITA!
+                        <br><br>
+                    </div>
+                    <div class="contenedor">
+                        <div class="columna_mensaje">Comprador
+                            <div class="comprador_info">
+                                <span class="material-symbols-outlined">arrow_right</span> Toda la comunidad de la upiita podrá acceder a la página para consultar
+                                precios, productos y disponibilidades.<br>
+                                <div class="search_icon">
+                                    <span class="material-symbols-outlined search_icon-">search_check</span>
+                                </div>
+                                <span class="material-symbols-outlined">arrow_right</span> Iniciando sesión podrás realizar pedidos, ya sea para apartar, comprar directo o agendar con
+                                el vendedor.<br>
+                                <div class="shop_icon">
+                                    <span class="material-symbols-outlined shop_icon-">add_shopping_cart</span>
+                                </div>
+                                <span class="material-symbols-outlined">arrow_right</span> Unicamente hay cupo para una cuenta por estudiante, es por eso que debes cuidar 
+                                tu contraseña y tu boleta.<br>
+                                <div class="person_icon">
+                                    <span class="material-symbols-outlined person_icon-">person_check</span>
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="columna_mensaje">Vendedor
+                            <div class="vendedor_info">
+                                <span class="material-symbols-outlined">arrow_right</span> Cualquier alumno de la comunidad puede registrarse para vender sus productos y
+                                mostrarlos en la página.
+                                <div class="login_icon">
+                                    <span class="material-symbols-outlined login_icon-">login</span>
+                                </div>
+                                <span class="material-symbols-outlined">arrow_right</span> Unicamente llenando tu registro con tu nombre, apellidos, matricula, teléfono, email, carrera y un password.<br>
+                                <div class="email_icon">
+                                    <span class="material-symbols-outlined email_icon-">content_paste</span>
+                                </div>
+                                <span class="material-symbols-outlined">arrow_right</span> Eventualmente tendrás tu cuenta para vender y comprar en Upii-Market!.
+                                que podrás usar de manera inmediata.<br>
+                                <div class="account_icon">
+                                    <span class="material-symbols-outlined account_icon-">task_alt</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+            <div class="Main3">
+                <div class="MainTitulo Main3_titulo">Por que usar Upii-Market</div>
+                    <div class="contenedor_2">
+                        <div class="columna">
+                            <span class="material-symbols-outlined interact_icon">
+                                interactive_space
+                                </span>
+                            <div class="columna_intro">Fácil contacto con los vendedores</div>
+                            <div class="descripcion">Sin buscar o guardar números, simplemente acordando un lugar y hora.</div>
+                        </div>
+                        <div class="columna">
+                            <span class="material-symbols-outlined add_icon">
+                                add_shopping_cart
+                                </span>
+                            <div class="columna_intro">Decide fácil tus próximo antojos</div>
+                            <div class="descripcion">Sin buscar post o números, simplemente explorando hasta encontrar ese antojo</div>
+                        </div>
+                        <div class="columna">
+                            <span class="material-symbols-outlined apartar_icon">
+                                pending_actions
+                                </span>
+                            <div class="columna_intro">Aparta tu snack favorito</div>
+                            <div class="descripcion"><br>Ese snack que tanto te gusta incluso desde un día antes</div>
+                        </div>
+                        <div class="columna">
+                            <span class="material-symbols-outlined precio_icon">
+                                attach_money
+                                </span>
+                            <div class="columna_intro">Consulta el precio de cada producto</div>
+                            <div class="descripcion">Explorando y revisando precios</div>
+                        </div>
+                        <div class="columna">
+                            <span class="material-symbols-outlined seek_icon">
+                                pageview
+                                </span>
+                            <div class="columna_intro">Actualizate con los menús del día a día en UPIITA</div>
+                            <div class="descripcion">Con los vendedores poniendo al dia sus productos</div>
+                        </div>
+                    
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <footer>
+        <div>
+            Upii-Market<br>
+            Desarrollada por alumnos del Instituto Poltecnico Nacional
+        </div>     
+    </footer>
+</html>

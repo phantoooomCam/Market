@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upii-Market/Comidas</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='submenus.css') }}">
+    </head>
+    <body>
+        <header class="submenus_header">
+            <div class="contenedor">
+                <div class="columna titulo_comidas">
+                    <h1 class="nombre_submenus">Comidas</h1>
+                    <h3 class="slogan"></h3>
+                </div>
+                <div class="columna buscador">
+                    <div class="barra_busqueda">
+                        <input class="busqueda" type="search" placeholder="Buscar">
+                        <button class="boton_buscar">
+                            <samp class="material-symbols-outlined buscar_header">search</samp>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <ul class="nav_menu">
+                    <li class="nav_menu_lista"><button class="btn_home"><span class="material-symbols-outlined home_icon">
+                        home
+                        </span><span class="desc_icon">home</span></button></li>
+                    <li class="nav_menu_lista"><button class="btn_account"><span class="material-symbols-outlined cuenta_icon">
+                        account_circle
+                        </span><span class="desc_icon">perfil</span></button></li>
+                    <li class="nav_menu_lista"><button class="btn_car"><span class="material-symbols-outlined car_icon">
+                        shopping_cart
+                        </span><span class="desc_icon">carrito</span></button></li>
+                    <li class="nav_menu_lista"><button class="btn_cake"><span class="material-symbols-outlined cake_icon">
+                        cake
+                        </span><span class="desc_icon">snacks</span></button></li>
+                    <li class="nav_menu_lista"><button class="btn_power"><span class="material-symbols-outlined power_icon">
+                        power
+                        </span><span class="desc_icon">material</span></button></li>
+                    <li class="nav_menu_lista"><button class="btn_otros"><span class="material-symbols-outlined otros_icon">
+                        package_2
+                        </span><span class="desc_icon">otros</span></button></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <br><br><br><br><br>
+                <div class="contenedor_main">
+                    <div class="columna_main">
+                        <div class="contenedor_producto">
+                            <div class="columna__ col1">
+                                <img src="pizza__1.jpg" alt="" class="img_prod">
+                                <img src="pizza__2.jpg" alt="" class="img_prod">
+                                <img src="pizza__3.jpg" alt="" class="img_prod">
+                                
+                                <div class="opciones_imagen">
+                                    <button class="anterior" id="anterior"><span class="material-symbols-outlined">
+                                        navigate_before
+                                        </span></button>
+                                    <button class="siguiente" id="siguiente"><span class="material-symbols-outlined">
+                                        navigate_next
+                                        </span></button>
+                                </div>
+                            </div>
+                            <div class="columna__ col2">
+                                <p class="producto__">Rebanadas de pizza del costco</p>
+                                <p class="precio__">$25.00 c/u</p>
+                                <p class="vendedor__">Pedri Gonzales</p>
+                                <p class="disponibilidad__">7 piezas</p>
+                                <button class="btn_agregar_carrito"><span class="material-symbols-outlined">
+                                    add_shopping_cart
+                                    </span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columna_main">
+                        <div class="contenedor_producto">
+                            <br>
+                            Producto
+                            <br>
+                            Precio
+                            <br>
+                            Vendedor
+                            <br>
+                            Disponibilidad
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+        </main>
+        <script src="{{ url_for('static', filename='redireccionamiento_submenus1.js') }}"></script>
+    </body>
+    <footer>
+        <div>
+            Upii-Market<br>
+            Desarrollada por alumnos del Instituto Poltecnico Nacional
+        </div>
+    </footer>
+</html>
