@@ -136,7 +136,7 @@ def shopping():
     return render_template('Shopping.html')
 
 
-
+'''Prueba para GitHub'''
 
 
 if __name__ == '__main__':
