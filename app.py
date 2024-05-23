@@ -136,8 +136,6 @@ def shopping():
     return render_template('Shopping.html')
 
 
-'''Prueba para GitHub'''
-'''Prueba para GitHub V2'''
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1433,debug=True)
