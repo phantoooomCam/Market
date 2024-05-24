@@ -68,32 +68,25 @@ h3{
 .Upii-Market-otrosh-3{
    font-weight: bold;
 }
-.barra_busqueda{
-    padding-bottom: 10px;
-    padding-left: 1px;
-    padding-right: 180px;
-    position: absolute;
-    margin-left: 40px;
-    margin-bottom: 10px;
-    top: 80px;  
-}
-.busqueda{
+.buscador .busqueda{
     outline: none;
     box-sizing: border-box;
     height: 61px;
     width: 547px;
     padding: 0 30px;
+    margin-top: 50px;
     color: black;
     border-radius: 100px;
     font-size: 20px;
     border: 1px solid white;
 }
-.boton_buscar{
+.buscador .boton_buscar{
     position: absolute;
     right: 0;
     top: 0;
+    margin-top: 60px;
     border: 1px solid white;
-    margin-right: 175px;
+    margin-right: 87px;
     width: 58px;
     height: 62px;
     background: black;
@@ -127,7 +120,7 @@ h3{
     margin-left: 0;
     margin-right: 0;
 }
-.boton_buscar:hover{
+.buscador .boton_buscar:hover{
     width: 65px;
     height: 68px;
     line-height: 20px;
@@ -261,4 +254,58 @@ footer{
     text-align: center;
     font-family: Raleway, sans-serif;
     padding: 15px 15px;
+}
+@media (max-width: 1080px){
+    body{
+        width: 100%;
+    }
+    .contenedor{
+        display: block;
+    }
+    .titulo_material{
+        padding-bottom: 5px;
+        background-size: 100% 200%;
+    }
+    .titulo_comidas{
+        padding-bottom: 5px;
+        background-size: 100% 300%;
+    }
+    .titulo_otros{
+        padding-bottom: 5px;
+        background-size: 100% 200%;
+    }
+    .titulo_snacks{
+        padding-bottom: 5px;
+        background-size: 100% 200%;
+    }
+    .nombre_submenus{
+        padding-bottom: 5px;
+    }
+    .slogan{
+        padding-bottom: 5px;
+    }
+    .fila{
+        display: block;
+    }
+    .buscador .barra_busqueda{
+        bottom: 200px;
+        margin-top: none;
+    }
+    .barra_busqueda{
+        padding-bottom: 15px;
+    }
+    .buscador .boton_buscar{
+        margin-top: 60px;
+        right: 130px;
+    }
+    .nav_menu_lista{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .btn_car, .btn_cake, .btn_home, .btn_pizza, .btn_otros, .btn_power, .btn_account{
+        font-size: 15px;
+    }
+    .car_icon, .pizza_icon, .power_icon, .cuenta_icon, .cake_icon, .otros_icon{
+        font-size: 30px;/*Aun no sirve pero es para aumentar el tamaño de los iconos*/
+    }
 }

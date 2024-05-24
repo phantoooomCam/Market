@@ -1,0 +1,183 @@
+body{ 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("Upiita_agregar.jpg"); /* Cambia 'ruta/a/tu/imagen.jpg' a la ruta de tu imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el cuerpo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-position: center;
+}
+.contenedor2{
+    background-color: black; /* Color de fondo negro */
+    height: 100%; /* Altura igual al tamaño de la ventana */
+    position: fixed; /* Fijar el contenedor al fondo de la página */
+    width: 1%; /* Ancho igual a la mitad del tamaño de la ventana */
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.contenedor3{
+    background-color: black; /* Color de fondo negro */
+    height: 100%; /* Altura igual al tamaño de la ventana */
+    position: fixed; /* Fijar el contenedor al fondo de la página */
+    width: 1%; /* Ancho igual a la mitad del tamaño de la ventana */
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100%;
+    width: 80%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(250, 250, 250, 0.5);
+    padding: 10px 45px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.confirmacion{
+    background-color: rgba(250, 250, 250, 0.5);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;   
+}
+.header_form{
+    display: flex;
+    margin: 30px 30px 0 30px;
+    font-family: Raleway, sans-serif;
+    font-weight: 550;
+    font-size: 25px;
+    padding-bottom: 10px;
+    .btn_back{
+        padding: 2px 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+    .btn_back:hover{
+        background: rgba(260, 260, 260, 0.9);
+    }
+}
+.con{
+    display: flex;
+}
+.columna1, .columna2{
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 5px;
+    font-family: Hind, sans-serif;
+    padding-top: 10px;
+}
+.formulario_grupo{
+    margin-bottom: 10px;
+}
+.formulario_input{
+    padding: 10px 0;
+    border-radius: 5px;
+    height: 20px;
+    width: 310px;
+    margin: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.clasificacion{
+    margin-top: 10px;
+    padding: 5px 30px;
+    font-size: 15px;
+    font-weight: 510;
+    border-radius: 5px;
+    cursor: pointer ;
+    margin-left: 10px;
+}
+.clasificacion:focus, .formulario_input:focus{
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163,0.4);
+}
+.confirmacion{
+    text-align: center;
+    padding: 30px 0;
+}
+.btn_confirmacion{
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 550;
+    cursor: pointer;
+    padding: 15px 55px;
+    background: black;
+    border: none;
+    border-radius: 3px;
+}
+.btn_confirmacion:hover{
+    background: #232125;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Quita la apariencia predeterminada del botón */
+  margin: 0; /* Asegura que no haya margen alrededor del botón */
+  position: relative; /* Ajusta la posición */
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox no admite el ::-webkit-inner-spin-button, así que se cambia la apariencia */
+}
+.imagenes_grupo{
+    input{
+        border: none;
+    }
+}
+.formulario_grupo-input.imagenes_select {
+    padding: 10px; /* Espaciado interno */
+    padding-left: 5px;
+    border-radius: 5px; /* Borde redondeado */
+    width: 300px; /* Ancho completo */
+    background-color: #858888;
+}
+.formulario_grupo-input.imagenes_select input[type="file"] {
+    width: 300px; /* Ancho completo */
+    background: #858888;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el área */
+}
+@media (max-width: 1080px) {
+    body{
+        height: 70vh;
+        background-size: 150% 190%;
+    }
+    .cont .con {
+        display: flex;
+        flex-direction: column;
+    }
+    body .cont{
+        width: 90%;
+        font-size: 25px;
+    }
+    body .cont .header_form{
+        font-size: 30px;
+    }
+    .cont .header_form .material-symbols-outlined{
+        font-size: 35px;
+        font-weight: 500;
+    }
+    body .cont input{
+        width: 90%;
+        height: 35px;
+        border-radius: 10px;
+        padding-left: 20px;
+        font-size: 22px;
+    }
+    body .confirmacion .btn_confirmacion{
+        width: 30%;
+        font-size: 24px;
+        font-weight: 500;
+        height: 75px;
+    }
+}

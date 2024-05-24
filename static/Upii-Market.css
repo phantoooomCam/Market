@@ -35,9 +35,12 @@ header{
 .Upii-Market{
     font-size: 100px;
     padding-top: 60px; 
-    padding-bottom: 60px;
+    padding-bottom: 10px;
     padding-left: 32px;
     font-family:'Trebuchet MS';
+}
+.slogan{
+    margin-bottom: 50px;
 }
 .barra_navegacion{
     position: absolute;
@@ -170,6 +173,7 @@ body{
 .btn__otros{
     background: url("otros.jpg");
     background-size: 100% 100%;
+    margin-right: 28px;
 }
 .btn__comida{
     background: url("pizza.jpg");
@@ -315,4 +319,154 @@ footer{
     color: white;
     padding: 15px 15px;
     font-family: Raleway, sans-serif;
+}
+.main4{
+    padding: none;
+}
+.planos{
+    display: absolute;
+    height: 700px;
+    width: 1423px;
+    background: url("planos.png");
+    background-size: 100% 100%;
+}
+
+@media (max-width: 1080px){
+    body{
+        width: 100%;
+    }
+    .contenedor{
+        display: block;
+    }
+    .col{
+        text-align: center;
+    }
+    .Upii-Market{
+        font-size: 70px;
+    }
+    .slogan{
+        padding-left: 25px;
+        font-size: 10px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .barra_busqueda{
+        padding-bottom: 0;
+        margin-bottom: 0;
+        top: 0;
+        padding-left: 16px;
+        bottom: 80px;
+        margin-bottom: 20px;
+    }
+    .col_1{
+        top:0;
+        bottom: 30px;
+    }
+    .car_icon, .cuenta_icon, .home_icon, .sell_icon{
+        text-align: center;
+        font-size: 40px;
+        font-variation-settings:
+      'FILL' 0,
+      'wght' 300,
+      'GRAD' 50,
+      'opsz' 40
+    }
+    .boton_buscar{
+        left: 603px;
+    }
+    .nav_menu_lista{
+        width: 24%;
+    }
+    .submenus{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .clasificacion{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .clasificacion_lista{
+        flex: 1 1 40%;
+        max-width: 32%;
+        text-align: center;
+    }
+    .btn-{
+        font-size: 30px;
+        margin: 12px 0;
+        text-shadow: -1px -1px 0 #000,  
+        1px -1px 0 #000,
+       -1px  1px 0 #000,
+        1px  1px 0 #000;
+        transition: 0.1s;
+    }
+    .btn__snack{
+        padding-right: 120px;
+    }
+    .btn__otros{
+        padding-right: 140px;
+    }
+    .btn-:hover{
+        width: 330px;
+    }
+    .Intro{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .cont{
+        display: flex;
+    }
+    .columna_mensaje{
+        flex: 1;
+        padding: 3px;
+        width: 45%;
+        box-sizing: border-box;
+        align-self: flex-start;
+    }
+    .contenedor_2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .contenedor_2 .columna{
+        width: 30%;
+        box-sizing: border-box;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+    }
+    footer{
+        font-size: 15px;
+        text-align: center;
+    }
+}
+@media (max-width: 1440px) {
+    body{
+        width: 100%;
+    }
+    .Upii-Market{
+        font-size: 85px;
+        top: 20px
+    }
+    .col_1{
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .barra_busqueda{
+        left: 90px;
+        right: 0;
+        margin-right: 150px;
+        padding-right: 0;
+    }
+    .boton_buscar{
+        right: 0.1px;
+        margin-right: 0;
+    }
+    .clasificacion_lista{
+        width: 20%;
+        margin: 0 28px;
+    }
+    .btn__otros{
+        right: 0;
+    }
 }
