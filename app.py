@@ -110,22 +110,35 @@ def iniciar_sesion():
 @app.route('/comidas',methods=['GET','POST'])
 @login_required
 def comidas():
-    return render_template('Comidas.html')
+    query = "SELECT * FROM Producto WHERE clasificacion = 'Comida'"
+    cursor.execute(query)
+    productos = cursor.fetchall()
+    return render_template('Comidas.html', productos=productos)
 
 @app.route('/material',methods=['GET','POST'])
 @login_required
 def material():
-    return render_template('Materiales.html')
+    query = "SELECT * FROM Producto WHERE clasificacion = 'Material'"
+    cursor.execute(query)
+    productos = cursor.fetchall()
+    return render_template('Materiales.html', productos=productos)
 
 @app.route('/snacks',methods=['GET','POST'])
 @login_required
 def snacks():
-    return render_template('Snacks.html')
+    query = "SELECT * FROM Producto WHERE clasificacion = 'Dulces'"
+    cursor.execute(query)
+    productos = cursor.fetchall()
+    return render_template('Snacks.html', productos=productos)
 
 @app.route('/otros',methods=['GET','POST'])
 @login_required
 def otros():
-    return render_template('Otros.html')
+    query = "SELECT * FROM Producto WHERE clasificacion = 'Otros'"
+    cursor.execute(query)
+    productos = cursor.fetchall()
+    return render_template('Otros.html', productos=productos)
+
 @app.route('/selling',methods=['GET','POST'])
 @login_required
 def selling():

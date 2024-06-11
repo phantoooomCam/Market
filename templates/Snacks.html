@@ -52,48 +52,18 @@
             </header>
             <main>
                 <br><br><br><br><br>
-                <div class="contenedor_main">
-                    <div class="columna_main">
-                        <div class="contenedor_producto">
-                            <div class="columna__ col1">
-                                <img src="rollitos.jpg" alt="" class="img_prod">
-                                <img src="rollitos2.jpeg" alt="" class="img_prod">
-                                <img src="rollitos3.jpg" alt="" class="img_prod">
-                                
-                                <div class="opciones_imagen">
-                                    <button class="anterior" id="anterior"><span class="material-symbols-outlined">
-                                        navigate_before
-                                        </span></button>
-                                    <button class="siguiente" id="siguiente"><span class="material-symbols-outlined">
-                                        navigate_next
-                                        </span></button>
-                                </div>
-                            </div>
-                            <div class="columna__ col2">
-                                <p class="producto__">Rollitos de zarzamora, jamon c/ queso y nutella</p>
-                                <p class="precio__">$20.00 c/u</p>
-                                <p class="vendedor__">Gerardo Hernandez Arzate</p>
-                                <p class="disponibilidad__">10 piezas</p>
-                                <button class="btn_agregar_carrito"><span class="material-symbols-outlined">
-                                    add_shopping_cart
-                                    </span></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columna_main">
-                        <div class="contenedor_producto">
-                            <br>
-                            Producto
-                            <br>
-                            Precio
-                            <br>
-                            Vendedor
-                            <br>
-                            Disponibilidad
-                            <br><br>
+                <!--
+            <div class="contenedor_main">
+                {% for producto in productos %}
+                <div class="columna_main">
+                    <div class="contenedor_producto">
+                        <div class="columna__ col1">
+                            <img src="data:image/jpeg;base64,{{ producto.imagen }}" alt="{{ producto.nombre }}" class="img_prod">
                         </div>
                     </div>
                 </div>
+                {% endfor %}
+            </div>-->
                 <br><br>
             </main>
             <script src="{{ url_for('static', filename='redireccionamiento_submenus4.js') }}"></script>

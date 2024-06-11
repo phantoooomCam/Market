@@ -52,48 +52,18 @@
             </header>
             <main>
                 <br><br><br><br><br>
-                <div class="contenedor_main">
-                    <div class="columna_main">
-                        <div class="contenedor_producto">
-                            <div class="columna__ col1">
-                                <img src="flores1.jpeg" alt="" class="img_prod">
-                                <img src="flores2.jpeg" alt="" class="img_prod">
-                                <img src="flores3.jpeg" alt="" class="img_prod">
-                                
-                                <div class="opciones_imagen">
-                                    <button class="anterior" id="anterior"><span class="material-symbols-outlined">
-                                        navigate_before
-                                        </span></button>
-                                    <button class="siguiente" id="siguiente"><span class="material-symbols-outlined">
-                                        navigate_next
-                                        </span></button>
-                                </div>
-                            </div>
-                            <div class="columna__ col2">
-                                <p class="producto__">Ramos de flores</p>
-                                <p class="precio__">$200.00 - $500.00</p>
-                                <p class="vendedor__">Alexa Putellas</p>
-                                <p class="disponibilidad__">2 piezas</p>
-                                <button class="btn_agregar_carrito"><span class="material-symbols-outlined">
-                                    add_shopping_cart
-                                    </span></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columna_main">
-                        <div class="contenedor_producto">
-                            <br>
-                            Producto
-                            <br>
-                            Precio
-                            <br>
-                            Vendedor
-                            <br>
-                            Disponibilidad
-                            <br><br>
+                <!--
+            <div class="contenedor_main">
+                {% for producto in productos %}
+                <div class="columna_main">
+                    <div class="contenedor_producto">
+                        <div class="columna__ col1">
+                            <img src="data:image/jpeg;base64,{{ producto.imagen }}" alt="{{ producto.nombre }}" class="img_prod">
                         </div>
                     </div>
                 </div>
+                {% endfor %}
+            </div>-->
                 <br><br>
             </main>
             <script src="{{ url_for('static', filename='redireccionamiento_submenus2.js') }}"></script>
