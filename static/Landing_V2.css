@@ -139,7 +139,7 @@ body {
     transform: scale(1); 
 }
 
-@media (max-width: 1080px){
+@media (max-width: 800px){
     .Upii-Market h1{
         font-size: 60px;
     }
@@ -149,7 +149,7 @@ body {
     .iconos .opciones{
             font-size: 40%;    
     }
-    .material-symbols-outlined{
-        font-size: 20px;
-    }
+    .material-symbols-outlined {
+        font-size: 10px;
+    }    
 }
