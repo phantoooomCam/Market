@@ -140,17 +140,13 @@ body {
 }
 
 @media (max-width: 1080px){
-    .Upii-Market{
-        h1{
-            font-size: 60px;
-        }
+    .Upii-Market h1{
+        font-size: 60px;
     }
     .slogan{
         font-size: 20px;
     }
-    .iconos{
-        .opciones{
-            font-size: 40%;
-        }
+    .iconos .opciones{
+            font-size: 40%;    
     }
 }
