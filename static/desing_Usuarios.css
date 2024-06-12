@@ -289,3 +289,44 @@ input[type=number]::-webkit-inner-spin-button,
 #botonRegresar:hover {
     transform: scale(1.1); /* Agrandar el botón al pasar el cursor sobre él */
 }
+
+@media (max-width: 700px) {
+    #botonRegresar{
+        left: 10px;
+        top: 10px;
+        font-size: 12px;
+        padding: 12px 30px;
+    }
+    .contenedor{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .contenedor .formulario{
+        width: 70%;
+        padding: 20px;
+        font-size: 10px;
+        margin-top: 30px;
+    }
+    .contenedor h1{
+        font-size: 20px;
+    }
+    .contenedor .formulario .formulario_label{
+        font-size: 14px;
+    }
+    .contenedor .formulario .formulario_input{
+        width: 78%;
+        height: 38px;
+        font-size: 13px;
+    }
+    .contenedor .formulario .formulario_grupo .formulario_carrera-input .contenido_select .carrera{
+        font-size: 13px;
+        padding: 10px 10px;
+    }
+    .contenedor .formulario .formulario_grupo .BotonAceptar{
+        padding: 15px 65px;
+        border-radius: 9px;
+    }
+    .contenedor .formulario .formulario_label{
+        padding: 5px 10px;
+    }
+}
