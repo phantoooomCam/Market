@@ -150,7 +150,7 @@ body {
         width: 50px;
         height: 50px;   
     }
-    .opciones {
+    .iconos .opciones {
         padding: 0;
         list-style-type: none;
         margin: 10px;
@@ -158,26 +158,9 @@ body {
         width: 100%;
         text-align: center; /* Alinea el texto al centro */
     }
-    .opciones_lista {
+    .iconos .opciones .opciones_lista {
         display: inline-block; /* Hace que los elementos de la lista se muestren en línea */
         margin-right: 20px; /* Ajusta el espacio entre los íconos según sea necesario */
         vertical-align: top; /* Alinea los elementos al principio de la línea */
-    }
-    .desc_icon {
-        position: relative;
-        font-family: DM Sans, sans-serif;
-        text-align: center;
-        cursor: pointer;
-        bottom: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.2s ease, visibility 0.2s ease;
-        color: white;
-    }
-    .opciones_lista:hover .desc_icon {
-        opacity: 1;
-        visibility: visible;
     }
 }
