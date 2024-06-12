@@ -122,6 +122,9 @@ body {
     transform: scale(1); 
 }
 @media (max-width: 800px){
+    .Upii-Market{
+        padding-top: 20px;
+    }
     .Upii-Market h1{
         font-size: 60px;
     }
@@ -142,5 +145,10 @@ body {
         border: 0;
         margin-right: 1px;
         margin-left: 1px;
+    }
+    .opciones_landing .botones .btn{
+        font-size: 18px;
+        padding: 15px 30px;
+        border-radius: 12px;
     }
 }
