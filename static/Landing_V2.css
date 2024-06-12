@@ -124,6 +124,7 @@ body {
 @media (max-width: 800px){
     .Upii-Market{
         padding-top: 20px;
+        margin-top: 80px;
     }
     .Upii-Market h1{
         font-size: 60px;
