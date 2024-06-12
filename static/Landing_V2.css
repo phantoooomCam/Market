@@ -138,3 +138,19 @@ body {
 .btn_is:hover ~ .btn_reg, .btn_reg:hover ~ .btn_is {
     transform: scale(1); 
 }
+
+@media (max-width: 1080px){
+    .Upii-Market{
+        h1{
+            font-size: 60px;
+        }
+    }
+    .slogan{
+        font-size: 20px;
+    }
+    .iconos{
+        .opciones{
+            font-size: 40%;
+        }
+    }
+}
