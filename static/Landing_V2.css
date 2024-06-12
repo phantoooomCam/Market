@@ -150,9 +150,18 @@ body {
         width: 50px;
         height: 50px;   
     }
+    .opciones {
+        padding: 0;
+        list-style-type: none;
+        margin: 10px;
+        color: white;
+        width: 100%;
+        text-align: center; /* Alinea el texto al centro */
+    }
     .opciones_lista {
-        display: inline-block;
+        display: inline-block; /* Hace que los elementos de la lista se muestren en línea */
         margin-right: 20px; /* Ajusta el espacio entre los íconos según sea necesario */
+        vertical-align: top; /* Alinea los elementos al principio de la línea */
     }
     .desc_icon {
         position: relative;
@@ -166,5 +175,9 @@ body {
         visibility: hidden;
         transition: opacity 0.2s ease, visibility 0.2s ease;
         color: white;
-    }    
+    }
+    .opciones_lista:hover .desc_icon {
+        opacity: 1;
+        visibility: visible;
+    }
 }
