@@ -1,0 +1,150 @@
+body {
+    background-color: #E8E7E7;
+}
+.barra_navegador {
+    color: white;
+    background: black;
+    padding: 15px 15px;
+    padding-right: 50px;
+}
+.U-P-header {
+    padding-right: 200px;
+}
+.nav-item-personal {
+    color: white;
+}
+.nav-link:hover {
+    color: #C4CECC;
+}
+.Upii-Market {
+    padding-left: 30px;
+    font-size: 26px;
+    font-family: 'Trebuchet MS';
+}
+.columna-personal {
+    padding: 20px 0;
+}
+.borderA {
+    border-right: 1px solid black;
+    padding-top: 150px;
+    background-color: black;
+    position: relative;
+    color: #D1D1D1;
+}
+.borderA::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -40px; /* Ajusta según sea necesario */
+    width: 30px; /* Ajusta según sea necesario */
+    height: 100%;
+    background: linear-gradient(to right, black, #E8E7E7);
+}
+.borderB {
+    border-left: 1px solid black;
+    padding-top: 30px;
+    background-color: #E8E7E7;
+    position: relative;
+}
+.borderB::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px; /* Ajusta según sea necesario */
+    width: 40px; /* Ajusta según sea necesario */
+    height: 100%;
+    background: linear-gradient(to left, #E8E7E7, black);
+}
+h1{
+    font-family: 'Trebuchet MS';
+    font-size: 100px;
+    font-weight: 700;
+}
+h2{
+    font-size: 25px;
+    font-weight: 400;
+}
+h3 {
+    font-family: Raleway, sans-serif;
+    padding: 10px 0;
+    font-weight: 300;
+    font-size: 20px;
+}
+.btn1{
+    background-color: black;
+    border: transparent;
+    color: white;
+}
+.btn{
+    width: 430px;
+    height: 200px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+.btn:hover{
+    border: 3.5px solid #1B59DF;
+    width: 440px;
+    height: 205px;
+    .btn-texto{
+    font-size: 21px;
+    font-weight: 530;
+    }
+}
+.btn-adding {
+    background: url("btn-deleting.jpg");
+    background-size: 100% 120%;
+    margin-right: 200px;
+}
+.btn-updating {
+    background: url("btn-updating.jpg");
+    background-size: 100% 200%;
+    margin-right: 200px;
+}
+.btn-deleting {
+    background: url("btn-adding.jpg");
+    background-size: 100% 120%;
+}
+.btn-texto {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+    transition: 0.3s ease;
+}
+.btn-adding .btn-texto{
+    color: black;
+    text-align: left;
+    padding-bottom: 200px;
+}
+.btn-updating .btn-texto{
+    color: white;
+    padding-bottom: 200px;
+    text-align: right;
+}
+.btn-deleting .btn-texto{
+    text-align: left;
+    color: white;
+    padding-top: 100px;
+}
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 15px 15px;
+    font-family: Raleway, sans-serif;
+}
+.slide-left {
+    transform: translateX(-20%); /* Desplazar el botón de izquierda a derecha */
+  }
+.slide-right {
+    transform: translateX(30%); /* Desplazar el botón de derecha a izquierda */
+}  
+.slide-in {
+    transform: translateX(0); /* Desplazar el botón */
+    opacity: 1; /* Hacer visible el botón */
+}
