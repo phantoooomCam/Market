@@ -148,7 +148,9 @@ body {
     }
     .iconos .opciones .opciones_lista .imagen{
         width: 45px;
-        height: 45px;   
+        height: 45px; 
+        padding: 0;
+        margin: 0;  
     }
     .iconos .opciones .opciones_lista{
         display: inline-block;
