@@ -146,10 +146,7 @@ body {
     .slogan{
         font-size: 17px;
     }
-    .iconos .opciones{
-            font-size: 40%;    
+    .iconos .opciones .opciones_lista{
+            font-size: 15px;    
     }
-    .material-symbols-outlined {
-        font-size: 10px;
-    }    
 }
