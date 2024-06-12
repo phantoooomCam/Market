@@ -147,7 +147,24 @@ body {
         font-size: 17px;
     }
     .iconos .opciones .opciones_lista .imagen{
-        width: 20px;
-        height: 23px;   
+        width: 50px;
+        height: 50px;   
     }
+    .opciones_lista {
+        display: inline-block;
+        margin-right: 20px; /* Ajusta el espacio entre los íconos según sea necesario */
+    }
+    .desc_icon {
+        position: relative;
+        font-family: DM Sans, sans-serif;
+        text-align: center;
+        cursor: pointer;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+        color: white;
+    }    
 }
