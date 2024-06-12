@@ -144,9 +144,12 @@ body {
         font-size: 60px;
     }
     .slogan{
-        font-size: 20px;
+        font-size: 17px;
     }
     .iconos .opciones{
             font-size: 40%;    
+    }
+    .material-symbols-outlined{
+        font-size: 20px;
     }
 }
