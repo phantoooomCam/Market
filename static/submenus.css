@@ -281,8 +281,20 @@ footer{
     .nombre_submenus{
         padding-bottom: 5px;
     }
-    .slogan{
+    .contenedor .columna .slogan{
         padding-bottom: 5px;
+        font-size: 25px;
+    }
+    .contenedor .buscador .busqueda{
+        width: 580px;
+        height: 70px;
+        font-size: 30px;
+    }
+    .contenedor .buscador .boton_buscar{
+        margin-right: 65px;
+        width: 65px;
+        height: 70px;
+        line-height: 80px;
     }
     .fila{
         display: block;
@@ -298,9 +310,15 @@ footer{
         margin-top: 60px;
         right: 130px;
     }
+    .submenus_header .fila .nav_menu .nav_menu_lista .material-symbols-outlined{
+        font-size: 50px;
+    }
+    .submenus_header .fila .nav_menu .nav_menu_lista .desc_icon{
+        font-size: 25px;
+    }
     .nav_menu_lista{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     .btn_car, .btn_cake, .btn_home, .btn_pizza, .btn_otros, .btn_power, .btn_account{
         font-size: 15px;

@@ -341,12 +341,22 @@ footer{
     .col{
         text-align: center;
     }
-    .Upii-Market{
-        font-size: 70px;
+    .contenedor .col_1 .barra_busqueda .busqueda{
+        width: 600px;
+        height: 70px;
+        font-size: 25px;
+    }
+    .contenedor .col_1 .barra_busqueda .boton_buscar{
+        height: 70px;
+        width: 65px;
+        margin-left: 18px;
+    }
+    .columna_header .Upii-Market{
+        font-size: 100px;
     }
     .slogan{
         padding-left: 25px;
-        font-size: 10px;
+        font-size: 25px;
         padding-bottom: 0;
         margin-bottom: 0;
     }
@@ -364,7 +374,7 @@ footer{
     }
     .car_icon, .cuenta_icon, .home_icon, .sell_icon{
         text-align: center;
-        font-size: 40px;
+        font-size: 60px;
         font-variation-settings:
       'FILL' 0,
       'wght' 300,
@@ -381,11 +391,17 @@ footer{
         display: flex;
         flex-wrap: wrap;
     }
+    .submenus .clasificacion .clasificacion_lista .btn- .lista_clasf{
+        font-size: 35px;
+    }
     .clasificacion{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
+    .fila .nav_menu .nav_menu_lista .desc_icon{
+        font-size: 25px;
+    } 
     .clasificacion_lista{
         flex: 1 1 40%;
         max-width: 32%;
@@ -423,6 +439,9 @@ footer{
         box-sizing: border-box;
         align-self: flex-start;
     }
+    .Main2 .cont .columna_mensaje .comprador_info, .Main2 .cont .columna_mensaje .vendedor_info{
+        font-size: 25px;
+    }
     .contenedor_2{
         display: flex;
         flex-wrap: wrap;
@@ -434,6 +453,12 @@ footer{
         text-align: center;
         align-items: center;
         align-content: center;
+    }
+    .Main3 .Main3_titulo{
+        font-size: 40px;
+    }
+    .Main3 .contenedor_2 .columna_intro, .Main3 .contenedor_2 .descripcion{
+        font-size: 27px;
     }
     footer{
         font-size: 15px;
