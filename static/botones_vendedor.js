@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", function(){
     var btn4 = document.querySelector(".btn_updating");
 
     btn1.addEventListener("click", function(){
-        window.location.href = "Upii-Market.html"
+        window.location.href = "/principal"
     })
     btn2.addEventListener("click", function(){
-        window.location.href = "Upii-Market Vendedor.html"
+        window.location.href = "/vendedor"
     })
     /*btn3.addEventListener("click", function(){
         window.location.href = "/vendedor_principal"

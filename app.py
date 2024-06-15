@@ -148,7 +148,15 @@ def selling():
 def shopping():
     return render_template('Shopping.html')
 
+@app.route('/agregarproducto',methods=['GET','POST'])
+@login_required
+def aproducto():
+    return render_template('Agregar_producto.html')
 
+@app.route('/vendedor',methods=['GET','POST'])
+@login_required
+def vendedor():
+    return render_template('Upii-Market Vendedor.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1433,debug=True)

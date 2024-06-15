@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     btn1.addEventListener("click", function() {
         // Redireccionar a otro archivo HTML
-        window.location.href = "Selling.html";
+        window.location.href = "/selling";
     });
 
     document.querySelector(".btn_confirmacion").addEventListener("click", function() {

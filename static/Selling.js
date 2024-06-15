@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "/principal";
     });
     btn2.addEventListener("click", function(){
-        window.location.href = "Agregar_producto.html";
+        window.location.href = "/agregarproducto";
     });
 });
