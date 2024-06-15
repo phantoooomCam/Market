@@ -6,6 +6,15 @@ from datetime import timedelta
 from datetime import datetime
 from functools import wraps
 
+
+#Configuracion de imagenes
+UPLOAD_FOLDER = 'path/to/upload/folder'  # Ruta donde se guardarán las imágenes
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}  # Extensiones permitidas
+def allowed_file(filename):
+    """Función para verificar si el archivo tiene una extensión permitida."""
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
 #Configuracion de cookies---------------------------------------------------------
 app = Flask(__name__,template_folder='templates')
 app.secret_key = 'secret_password'
@@ -151,6 +160,34 @@ def shopping():
 @app.route('/agregarproducto',methods=['GET','POST'])
 @login_required
 def aproducto():
+    if request.method == 'POST':
+        producto = request.form['producto']
+        precio = request.form['precio']
+        clasificacion = request.form['clasificacion']
+        disponibilidad = request.form['disponibilidad']
+        
+        imagen_binaria= None
+        
+        '''if 'imagenes' in request.files:
+            archivo = request.files['imagenes']
+            if archivo and allowed_file(archivo.filename):
+                imagen_binaria = archivo.read()'''
+                
+        print("Producto:", producto)
+        print("Precio:", float(precio))
+        print("Clasificación:", clasificacion)
+        print("Disponibilidad:", int(disponibilidad))
+        #print("Imagen binaria:", "Image uploaded" if imagen_binaria else "No image uploaded")
+
+        '''
+        query = """
+        INSERT INTO Producto (nombre, clasificacion, precio, dispo, imagen)
+        VALUES (?, ?, ?, ?, ?)
+        """
+        cursor.execute(query,(producto,clasificacion,float(precio),int(disponibilidad),imagen_binaria))
+        conn.commit()'''
+        
+        
     return render_template('Agregar_producto.html')
 
 @app.route('/vendedor',methods=['GET','POST'])

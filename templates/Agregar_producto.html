@@ -16,7 +16,7 @@
         </div>  
         <div class="cont">
             <div class="contenedor"></div>
-                <form action="">
+                <form action="/agregarproducto"  method="POST">
                     <div class="header_form">
                         <button class="btn_back"><span class="material-symbols-outlined">
                             arrow_back
@@ -51,9 +51,9 @@
                                         <select class="clasificacion" id='clasificacion' name="clasificacion" >
                                             <div class="opciones" id="opciones">
                                                 <option class="select_option" value="opcion1">Comida</option>
-                                                <option class="select_option" value="opcion2">Snack</option>
+                                                <option class="select_option" value="opcion2">Dulces</option>
                                                 <option class="select_option" value="opcion3">Material</option>
-                                                <option class="select_option" value="opcion4">Otro</option>    
+                                                <option class="select_option" value="opcion4">Otros</option>    
                                             </div>
                                         </select>
                                     </div>
@@ -66,17 +66,17 @@
                             <div class="formulario_grupo" id="grupo_oferta">
                                 <label for="disponibilidad" class="formulario_label">Disponibilidad</label>
                                 <div class="formulario_grupo-input">    
-                                    <input class="formulario_input disponibilidad" id="disponibilidad" name='disponibilidad' type="text" placeholder=" e. j. 10 piezas" required>
+                                    <input class="formulario_input disponibilidad" id="disponibilidad" name='disponibilidad' type="number" placeholder=" e. j. 10 piezas" required>
                                     <i class="formulario_validacion-estado fas fa-times-circle"></i>
                                 </div>
                             </div>
 
                             <!-- Grupo: Imagenes -->
                             <div class="formulario_grupo imagenes_grupo" id="grupo_imagenes">
-                                <label for="imagenes" class="formulario_label">Seleccione hasta 6 imágenes:</label>
+                                <label for="imagenes" class="formulario_label">Seleccione imágen:</label>
                                 <div class="formulario_grupo-input imagenes_select">
-                                    <form action="" method="post" enctype="multipart/form-data">
-                                        <input class="formulario_input entrada" type="file" name="imagenes[]" id="imagenes" accept="image/*" multiple="multiple" max="6">
+                                    <form action="/agregarproducto" method="POST" enctype="multipart/form-data">
+                                        <input class="formulario_input entrada" type="file" name="imagenes" id="imagenes" accept="image/*">
                                     </form>
                                 </div>
                             </div>
