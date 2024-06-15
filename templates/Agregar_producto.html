@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+            <title>Upii-Market/Agregar Producto</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{{ url_for(('static', filename='/reset.css'))}}">
+            <link rel="stylesheet" href="{{ url_for(('static', filename='/Agregar_producto.css'))}}">
+    </head>
+    <body>
+        <div class="contenedor2">
+        </div>  
+        <div class="cont">
+            <div class="contenedor"></div>
+                <form action="">
+                    <div class="header_form">
+                        <button class="btn_back"><span class="material-symbols-outlined">
+                            arrow_back
+                            </span></button>
+                        <h1>Agrega tu producto!</h1>
+                    </div>
+                    <div class="con">
+                        <div class="columna1">    
+                            <!--Grupo: producto-->
+                            <div class="formulario_grupo" id="grupo_producto">
+                                <label for="producto" class="formulario_label">Nombre del producto</label>
+                                <div class="formulario_grupo-input">    
+                                    <input class="formulario_input producto" id="producto" name='producto' type="text" placeholder=" e. j. Pizza del costco" required>
+                                    <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                </div>
+                            </div>
+
+                            <!--Grupo: precio-->
+                            <div class="formulario_grupo" id="grupo_precio">
+                                <label for="precio" class="formulario_label">Costo unitario</label>
+                                <div class="formulario_grupo-input">    
+                                    <input class="formulario_input precio" id="precio" name='precio' type="number" placeholder=" e. j 21.50" required>
+                                    <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                </div>
+                            </div>
+                            
+                            <!--Grupo: clasificacion-->
+                            <div class="formulario_grupo" id="grupo_clasificacion">
+                                <label for="clasificacion" class="formulario_label">Clasificacion del producto</label>
+                                <div class="formulario_clasificacion-input">
+                                    <div class="contenido_select formulario_grupo-input">
+                                        <select class="clasificacion" id='clasificacion' name="clasificacion" >
+                                            <div class="opciones" id="opciones">
+                                                <option class="select_option" value="opcion1">Comida</option>
+                                                <option class="select_option" value="opcion2">Snack</option>
+                                                <option class="select_option" value="opcion3">Material</option>
+                                                <option class="select_option" value="opcion4">Otro</option>    
+                                            </div>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columna2">
+                            
+                            <!--Grupo: Disponibilidad-->
+                            <div class="formulario_grupo" id="grupo_oferta">
+                                <label for="disponibilidad" class="formulario_label">Disponibilidad</label>
+                                <div class="formulario_grupo-input">    
+                                    <input class="formulario_input disponibilidad" id="disponibilidad" name='disponibilidad' type="text" placeholder=" e. j. 10 piezas" required>
+                                    <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                </div>
+                            </div>
+
+                            <!-- Grupo: Imagenes -->
+                            <div class="formulario_grupo imagenes_grupo" id="grupo_imagenes">
+                                <label for="imagenes" class="formulario_label">Seleccione hasta 6 imágenes:</label>
+                                <div class="formulario_grupo-input imagenes_select">
+                                    <form action="" method="post" enctype="multipart/form-data">
+                                        <input class="formulario_input entrada" type="file" name="imagenes[]" id="imagenes" accept="image/*" multiple="multiple" max="6">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="confirmacion">
+                        <button class="btn_confirmacion">Agregar</button>
+                        <p class="msj_confirmacion"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="contenedor3"></div>
+        <script src="Agregar_producto.js"></script>
+    </body>
+</html>
