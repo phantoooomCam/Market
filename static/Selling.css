@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Raleway, sans-serif;
+    background-color:  rgb(93, 112, 176);
+}
+.desc_icon{
+    color: white;
+    display: block;
+}
+.boton_regresar{
+    background: #ffffff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.boton_regresar:hover{
+    background: #6236FF;
+    color: white;
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px #bdbdbf;
+    width: 80%;
+    background-color: #ffffff;
+    box-sizing: 30px;
+
+    .tabla_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px 0;
+        padding-bottom: 20px;
+        color: white;
+        background-color: #4C5866;
+
+        h2{
+            font-weight: 600;
+            font-size: 27px;
+        }
+        button{
+            outline: none;
+            border: 0.1px solid white;
+            background-color: #6236ff;
+            color: #ffffff;
+            padding: 10px 30px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: #522bee;
+            }
+        }
+        .buscar{
+            color: black;
+            position: relative;
+            input{
+                border-radius: 30px;
+                width: 400px;
+                outline: none;
+                padding: 10px 20px;
+                border: 1.4px solid white;
+                box-sizing: border-box;
+                padding-right: 50px;
+            }
+            .buscar_icon{
+                position: absolute;
+                top: 50%;
+                right: 0;
+                margin-right: 1rem;
+                transform: translate(-50%,-50%);
+                cursor: pointer;
+            }
+        }
+    }
+    table{
+        border-spacing: 0;
+
+        thead{
+            background-color: #EAC615;
+            color: black;
+            font-weight: 900;
+            
+            th{
+                padding: 8px;
+                font-weight: 570;
+                .iconx{
+                    font-size: 15px;
+                    font-weight: 570;
+                }
+            }
+        }
+        tbody{
+            color: black;
+            font-weight: 500;
+            tr{
+                td{
+                    padding: 10px;
+                    text-align: center;
+                    border-bottom: 1px solid #dfdfdf;
+
+                    .edit_icon, .delete_icon{
+                        font-size: 20px;
+                        cursor: pointer;
+                        margin-left: 10px;
+                        color: #797979;
+
+                    }
+                }
+                &:hover{
+                    background-color: #f5f5f5;
+
+                }
+            }
+        }
+    }
+    .tabla_footer{
+        margin-top: 1rem;
+        padding: 0 30px 20px;
+    }
+}
+@media (max-width: 1080px){
+    body{
+        min-height: 25vh;
+    }
+    .contenedor{
+        width: 80%;
+    }
+    .tabla_header{
+        flex-wrap: wrap;
+    }
+    .contenedor .tabla_header h2{
+        font-size: 35px;
+        margin-right: 300px;
+    }
+    .contenedor .tabla_header .buscar{
+        margin-top: 10px;
+    }
+    .contenedor .tabla_header .agregar, .contenedor .tabla_header .boton_regresar{
+        height: 50px;
+    }
+    .contenedor .tabla_header .buscar .input_buscar{
+        height: 50px;
+        font-size: 20px;
+        width: 500px;
+    }
+    .tabla th:nth-child(n+2),
+    .tabla td:nth-child(n+2){
+        display: none;
+    }
+    .contenedor .tabla th{
+        text-align: left;
+        padding: 12px 0 12px 20px;
+    }
+    .contenedor .tabla td{
+        text-align: left;
+        padding: 15px 0 15px 20px;
+    }
+    .info-detallada{
+        border-bottom: 2px solid black;
+        padding: 5px;
+    }
+    .info-detallada p{
+        margin-bottom: 10px;
+        margin-top: 3px;
+    }
+    .info-detallada strong{
+        font-weight: 700;
+    }
+}
