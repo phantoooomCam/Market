@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Agregar event listener a btn2
     btn2.addEventListener("click", function() {
         // Redireccionar a otro archivo HTML
-        window.location.href = "/vendedor";
+        window.location.href = "/iniciarvendedor";
     });
 
     // Agregar event listener a btn2

@@ -179,8 +179,9 @@ def aproducto():
         disponibilidad = request.form['disponibilidad']
         
         imagen_binaria= None
-        
-        '''if 'imagenes' in request.files:
+        user_id = session['user']['id']
+
+        if 'imagenes' in request.files:
             archivo = request.files['imagenes']
             if archivo and allowed_file(archivo.filename):
                 imagen_binaria = archivo.read()
@@ -189,7 +190,7 @@ def aproducto():
         print("Precio:", float(precio))
         print("Clasificación:", clasificacion)
         print("Disponibilidad:", int(disponibilidad))
-        #print("Imagen binaria:", "Image uploaded" if imagen_binaria else "No image uploaded")
+        print("Imagen binaria:", "Image uploaded" if imagen_binaria else "No image uploaded")
 
         
         query ="INSERT INTO Producto (nombre, clasificacion, precio, dispo, imagen, id_usuario) VALUES (?, ?, ?, ?, ?, ?)"
@@ -241,7 +242,7 @@ def cambiar_vendedor():
 
         user = cursor.fetchone()
         if user:
-            "UPDATE Usuario SET Estado = 1 WHERE nombre = ? AND email = ?  AND contrasena = ?"
+            "UPDATE Usuario SET estado = 1 WHERE nombre = ? AND email = ?  AND contrasena = ?"
             cursor.execute(query, (nombre, correo, contraseña))
 
             user = cursor.fetchone()
