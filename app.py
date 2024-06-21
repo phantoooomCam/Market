@@ -166,18 +166,17 @@ def aproducto():
         clasificacion = request.form['clasificacion']
         disponibilidad = request.form['disponibilidad']
         
-        imagen_binaria= None
+        #imagen_binaria= None
         
         '''if 'imagenes' in request.files:
             archivo = request.files['imagenes']
             if archivo and allowed_file(archivo.filename):
                 imagen_binaria = archivo.read()'''
                 
-        print("Producto:", producto)
-        print("Precio:", float(precio))
-        print("Clasificación:", clasificacion)
-        print("Disponibilidad:", int(disponibilidad))
-        #print("Imagen binaria:", "Image uploaded" if imagen_binaria else "No image uploaded")
+        print(producto)
+        print(int(precio))
+        print(clasificacion)
+        print(int(disponibilidad))
 
         '''
         query = """
