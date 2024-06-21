@@ -16,25 +16,25 @@
         <main>        
             <div class="container" id="container">
                 <div class="form-container sign-up-container">
-                    <form action="#">
+                    <form action="/cambiarvendedor">
                     <h1>Hazte vendedor</h1>
                     <span>Usa tu cuenta ya existente</span>
-                    <input type="text" placeholder="Nombre" />
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Contraseña" />
-                    <button>Sign Up</button>
+                    <input type="text" name='nombre' placeholder="Nombre" />
+                    <input type="email" name='correo' placeholder="Email" />
+                    <input type="password" name='contraseña' placeholder="Contraseña" />
+                    <button>Registrarse</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
-                    <form action="#">
+                    <form action="/iniciarvendedor">
                     <button type="button" class="btn-home">
                         <i class="bi bi-house"></i>
                     </button>
-                    <h1>Sign in</h1>
+                    <h1>Inicia sesion</h1>
                     <span>Usa tu cuenta ya existente</span>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Contraseña" />
-                    <button>Sign In</button>
+                    <input type="email" name='email' placeholder="Email" />
+                    <input type="password" name='password' placeholder="Contraseña" />
+                    <button>Iniciar sesión</button>
                     </form>
                 </div>
                 <div class="overlay-container">
@@ -42,12 +42,12 @@
                     <div class="overlay-panel overlay-left">
                         <h1>Ya soy vendedor!</h1>
                         <p>Iniciar sesion de vendedor</p>
-                        <button class="ghost" id="signIn">Swicth to</button>
+                        <button class="ghost" id="signIn">Cambiar</button>
                     </div>
                     <div class="overlay-panel overlay-right">
                         <h1>Cuenta de vendedor!</h1>
                         <p>Quiero registrarme como vendedor</p>
-                        <button class="ghost" id="signUp">Sign Up</button>
+                        <button class="ghost" id="signUp">Registrarse</button>
                     </div>
                     </div>
                 </div>

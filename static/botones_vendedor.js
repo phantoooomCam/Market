@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function(){
     var btn1 = document.querySelector(".btn_upii-market");
     var btn2 = document.querySelector(".btn-home");
-    //var btn3 = document.querySelector('.btn-account');
-    var btn4 = document.querySelector(".btn_adding");
-    var btn4 = document.querySelector(".btn_deleting");
-    var btn4 = document.querySelector(".btn_updating");
+    var btn4 = document.querySelector(".btn-adding");
+    var btn5 = document.querySelector(".btn-deleting");
+    var btn6 = document.querySelector(".btn-updating");
 
     btn1.addEventListener("click", function(){
         window.location.href = "/principal"
@@ -41,13 +40,13 @@ document.addEventListener("DOMContentLoaded", function(){
     btn2.addEventListener("click", function(){
         window.location.href = "/vendedor"
     })
-    /*btn3.addEventListener("click", function(){
-        window.location.href = "/vendedor_principal"
-    })*/
     btn4.addEventListener("click", function(){
-        window.location.href = "/vendedor_principal"
+        window.location.href = "/agregarproducto"
     })
     btn5.addEventListener("click", function(){
-        window.location.href = "/vendedor_principal"
+        window.location.href = "/selling"
+    })
+    btn6.addEventListener("click", function(){
+        window.location.href = "/selling"
     })
 });

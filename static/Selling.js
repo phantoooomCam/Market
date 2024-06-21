@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     btn1.addEventListener("click", function() {
         // Redireccionar a otro archivo HTML
-        window.location.href = "/principal";
+        window.location.href = "/vendedor";
     });
     btn2.addEventListener("click", function(){
         window.location.href = "/agregarproducto";

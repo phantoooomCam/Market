@@ -6,7 +6,6 @@ from datetime import timedelta
 from datetime import datetime
 from functools import wraps
 
-
 #Configuracion de imagenes
 UPLOAD_FOLDER = 'path/to/upload/folder'  # Ruta donde se guardarán las imágenes
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}  # Extensiones permitidas
@@ -104,6 +103,19 @@ def iniciar_sesion():
         user = cursor.fetchone()
 
         if user:
+            session['user']={
+                'id':user[0],
+                'nombre': user[1],
+                'apellido': user[2],
+                'telefono': user[3],
+                'matricula': user[4],
+                'carrera': user[5],
+                'email': user[6],
+                'estado': user[7]
+
+            }
+            return redirect(url_for('principal'))
+        if user:
             column_names = [column[0] for column in cursor.description]
             user_data = dict(zip(column_names, user))
             session['user'] = user_data
@@ -157,7 +169,7 @@ def selling():
 def shopping():
     return render_template('Shopping.html')
 
-@app.route('/agregarproducto',methods=['GET','POST'])
+@app.route('/agregarproducto', methods=['GET','POST'])
 @login_required
 def aproducto():
     if request.method == 'POST':
@@ -167,26 +179,24 @@ def aproducto():
         disponibilidad = request.form['disponibilidad']
         
         imagen_binaria= None
-        
-        '''if 'imagenes' in request.files:
+        user_id = session['user']['id']
+
+        if 'imagenes' in request.files:
             archivo = request.files['imagenes']
             if archivo and allowed_file(archivo.filename):
-                imagen_binaria = archivo.read()'''
+                imagen_binaria = archivo.read()
                 
         print("Producto:", producto)
         print("Precio:", float(precio))
         print("Clasificación:", clasificacion)
         print("Disponibilidad:", int(disponibilidad))
-        #print("Imagen binaria:", "Image uploaded" if imagen_binaria else "No image uploaded")
+        print("Imagen binaria:", "Image uploaded" if imagen_binaria else "No image uploaded")
 
-        '''
-        query = """
-        INSERT INTO Producto (nombre, clasificacion, precio, dispo, imagen)
-        VALUES (?, ?, ?, ?, ?)
-        """
-        cursor.execute(query,(producto,clasificacion,float(precio),int(disponibilidad),imagen_binaria))
-        conn.commit()'''
         
+        query ="INSERT INTO Producto (nombre, clasificacion, precio, dispo, imagen, id_usuario) VALUES (?, ?, ?, ?, ?, ?)"
+
+        cursor.execute(query,(producto,clasificacion,float(precio),int(disponibilidad),imagen_binaria, int(user_id)))
+        conn.commit()
         
     return render_template('Agregar_producto.html')
 
@@ -194,6 +204,54 @@ def aproducto():
 @login_required
 def vendedor():
     return render_template('Upii-Market Vendedor.html')
+
+#------------------Agregado por LALO
+@app.route('/iniciarvendedor', methods=['GET','POST'])
+@login_required
+def login_vendedor():
+    if request.method == 'POST':
+        correo = request.form['email']
+        contraseña = request.form['password']
+
+        query = "SELECT * FROM Usuario WHERE email = ? AND contrasena = ? AND estado = 1"
+        cursor.execute(query, (correo, contraseña))
+
+        user = cursor.fetchone()
+
+        if user and user['user']['estado']==1:
+            column_names = [column[0] for column in cursor.description]
+            user_data = dict(zip(column_names, user))
+            session['user'] = user_data
+            return redirect(url_for('/vendedor'))
+        else:
+            error = 'Su cuenta aun no es tipo vendedor, porfavor registrese'
+            return render_template('sing_up_vendedor.html', error=error)
+    else:
+        return render_template('sing_up_vendedor.html')
+
+@app.route('/cambiarvendedor', methods=['GET','POST'])
+@login_required
+def cambiar_vendedor():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        correo = request.form['correo']
+        contraseña = request.form['contraseña']
+
+        query = "SELECT * FROM Usuario WHERE nombre = ? AND email = ?  AND contrasena = ? AND estado = 0"
+        cursor.execute(query, (nombre, correo, contraseña))
+
+        user = cursor.fetchone()
+        if user:
+            "UPDATE Usuario SET Estado = 1 WHERE nombre = ? AND email = ?  AND contrasena = ?"
+            cursor.execute(query, (nombre, correo, contraseña))
+
+            user = cursor.fetchone()
+            return redirect(url_for("/login_vendedor"))
+        else:
+            error = 'Su cuenta no existe o ya es tipo vendedor'
+            return render_template('sing_up_vendedor.html', error=error)
+    else:
+        return render_template('sing_up_vendedor.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1433,debug=True)
