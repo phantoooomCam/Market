@@ -214,19 +214,31 @@ def login_vendedor():
         correo = request.form['email']
         contraseña = request.form['password']
 
-        query = "SELECT * FROM Usuario WHERE email = ? AND contrasena = ? AND estado = 1"
-        cursor.execute(query, (correo, contraseña))
+        try:
+            # Seleccionar usuario
+            query = "SELECT * FROM Usuario WHERE email = ? AND contrasena = ? AND estado = 1"
+            cursor.execute(query, (correo, contraseña))
+            user = cursor.fetchone()
 
-        user = cursor.fetchone()
+            if user:
+                # Verificar que el usuario tenga el estado de vendedor (estado = 1)
+                column_names = [column[0] for column in cursor.description]
+                user_data = dict(zip(column_names, user))
 
-        if user['user']['estado']==1:
-            print("Cuenta tipo vendedor!")
-            column_names = [column[0] for column in cursor.description]
-            user_data = dict(zip(column_names, user))
-            session['user'] = user_data
-            return redirect(url_for('/vendedor'))
-        else:
-            error = 'Su cuenta aun no es tipo vendedor, porfavor registrese'
+                if user_data['estado'] == 1:
+                    print("¡Cuenta tipo vendedor!")
+                    session['user'] = user_data
+                    return redirect(url_for('vendedor'))
+                else:
+                    error = 'Su cuenta aun no es tipo vendedor, por favor registrese'
+                    return render_template('sing_up_vendedor.html', error=error)
+            else:
+                error = 'Correo o contraseña incorrectos'
+                return render_template('sing_up_vendedor.html', error=error)
+
+        except pyodbc.Error as e:
+            print(f"Database error: {e}")
+            error = 'Ha ocurrido un error con la base de datos'
             return render_template('sing_up_vendedor.html', error=error)
     else:
         return render_template('sing_up_vendedor.html')
