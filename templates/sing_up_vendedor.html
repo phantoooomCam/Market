@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Upii-Market/Vendedor</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='sing_up_vendedor.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <main>        
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#">
+                    <h1>Hazte vendedor</h1>
+                    <span>Usa tu cuenta ya existente</span>
+                    <input type="text" placeholder="Nombre" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Contraseña" />
+                    <button>Sign Up</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                    <button type="button" class="btn-home">
+                        <i class="bi bi-house"></i>
+                    </button>
+                    <h1>Sign in</h1>
+                    <span>Usa tu cuenta ya existente</span>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Contraseña" />
+                    <button>Sign In</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Ya soy vendedor!</h1>
+                        <p>Iniciar sesion de vendedor</p>
+                        <button class="ghost" id="signIn">Swicth to</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Cuenta de vendedor!</h1>
+                        <p>Quiero registrarme como vendedor</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                    </div>
+                </div>
+            </div>   
+            <script src="{{ url_for('static', filename='sing_up_vendedor.js') }}"></script>
+            <script src="{{ url_for('static', filename='bootstrap.bundle.js')}}"></script>
+        </main>
+    </body>
+</html>
