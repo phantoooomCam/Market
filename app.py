@@ -179,9 +179,8 @@ def aproducto():
         disponibilidad = request.form['disponibilidad']
         
         imagen_binaria= None
-        user_id = session['user']['id']
-
-        if 'imagenes' in request.files:
+        
+        '''if 'imagenes' in request.files:
             archivo = request.files['imagenes']
             if archivo and allowed_file(archivo.filename):
                 imagen_binaria = archivo.read()
@@ -190,7 +189,7 @@ def aproducto():
         print("Precio:", float(precio))
         print("Clasificación:", clasificacion)
         print("Disponibilidad:", int(disponibilidad))
-        print("Imagen binaria:", "Image uploaded" if imagen_binaria else "No image uploaded")
+        #print("Imagen binaria:", "Image uploaded" if imagen_binaria else "No image uploaded")
 
         
         query ="INSERT INTO Producto (nombre, clasificacion, precio, dispo, imagen, id_usuario) VALUES (?, ?, ?, ?, ?, ?)"

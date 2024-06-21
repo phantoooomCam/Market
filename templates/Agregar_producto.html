@@ -68,22 +68,25 @@
                         </div>
                     </div>
 
-                    <!-- Grupo: Imagenes -->
-                    <div class="formulario_grupo imagenes_grupo" id="grupo_imagenes">
-                        <label for="imagenes" class="formulario_label">Seleccione imágen:</label>
-                        <div class="formulario_grupo-input imagenes_select">
-                            <input class="formulario_input entrada" type="file" name="imagenes" id="imagenes" accept="image/*">
+                            <!-- Grupo: Imagenes -->
+                            <div class="formulario_grupo imagenes_grupo" id="grupo_imagenes">
+                                <label for="imagenes" class="formulario_label">Seleccione imágen:</label>
+                                <div class="formulario_grupo-input imagenes_select">
+                                    <form action="/agregarproducto" method="POST" enctype="multipart/form-data">
+                                        <input class="formulario_input entrada" type="file" name="imagenes" id="imagenes" accept="image/*">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="confirmacion">
+                        <button class="btn_confirmacion">Agregar</button>
+                        <p class="msj_confirmacion"></p>
+                    </div>
+                </form>
             </div>
-            <div class="confirmacion">
-                <button type="submit" class="btn_confirmacion">Agregar</button>
-                <p class="msj_confirmacion"></p>
-            </div>
-        </form>
-    </div>
-    <div class="contenedor3"></div>
-    <script src="{{ url_for('static', filename='Agregar_producto.js') }}"></script>
-</body>
+        </div>
+        <div class="contenedor3"></div>
+        <script src="{{ url_for('static', filename='Agregar_producto.js') }}"></script>
+    </body>
 </html>
