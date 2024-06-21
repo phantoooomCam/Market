@@ -16,25 +16,25 @@
         <main>        
             <div class="container" id="container">
                 <div class="form-container sign-up-container">
-                    <form action="/cambiarvendedor">
-                    <h1>Hazte vendedor</h1>
-                    <span>Usa tu cuenta ya existente</span>
-                    <input type="text" name='nombre' placeholder="Nombre" />
-                    <input type="email" name='correo' placeholder="Email" />
-                    <input type="password" name='contraseña' placeholder="Contraseña" />
-                    <button type="submit">Registrarse</button>
+                    <form action="/cambiarvendedor" method="POST">
+                        <h1>Hazte vendedor</h1>
+                        <span>Usa tu cuenta ya existente</span>
+                        <input type="text" name='nombre' placeholder="Nombre" />
+                        <input type="email" name='correo' placeholder="Email" />
+                        <input type="password" name='contraseña' placeholder="Contraseña" />
+                        <button type="submit">Registrarse</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
-                    <form action="/iniciarvendedor">
-                    <button type="button" class="btn-home">
-                        <i class="bi bi-house"></i>
-                    </button>
-                    <h1>Inicia sesion</h1>
-                    <span>Usa tu cuenta ya existente</span>
-                    <input type="email" name='email' placeholder="Email" />
-                    <input type="password" name='password' placeholder="Contraseña" />
-                    <button type="submit">Iniciar sesión</button>
+                    <form action="/iniciarvendedor" method="POST">
+                        <button type="button" class="btn-home">
+                            <i class="bi bi-house"></i>
+                        </button>
+                        <h1>Inicia sesion</h1>
+                        <span>Usa tu cuenta ya existente</span>
+                        <input type="email" name='email' placeholder="Email" />
+                        <input type="password" name='password' placeholder="Contraseña" />
+                        <button type="submit">Iniciar sesión</button>
                     </form>
                 </div>
                 <div class="overlay-container">

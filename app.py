@@ -6,13 +6,14 @@ from datetime import timedelta
 from datetime import datetime
 from functools import wraps
 
+import sqlite3
+
 #Configuracion de imagenes
 UPLOAD_FOLDER = 'path/to/upload/folder'  # Ruta donde se guardarán las imágenes
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}  # Extensiones permitidas
 def allowed_file(filename):
     """Función para verificar si el archivo tiene una extensión permitida."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 #Configuracion de cookies---------------------------------------------------------
 app = Flask(__name__,template_folder='templates')
@@ -218,7 +219,8 @@ def login_vendedor():
 
         user = cursor.fetchone()
 
-        if user and user['user']['estado']==1:
+        if user['user']['estado']==1:
+            print("Cuenta tipo vendedor!")
             column_names = [column[0] for column in cursor.description]
             user_data = dict(zip(column_names, user))
             session['user'] = user_data
@@ -237,21 +239,33 @@ def cambiar_vendedor():
         correo = request.form['correo']
         contraseña = request.form['contraseña']
 
-        query = "SELECT * FROM Usuario WHERE nombre = ? AND email = ?  AND contrasena = ? AND estado = 0"
-        cursor.execute(query, (nombre, correo, contraseña))
-
-        user = cursor.fetchone()
-        if user:
-            "UPDATE Usuario SET estado = 1 WHERE nombre = ? AND email = ?  AND contrasena = ?"
-            cursor.execute(query, (nombre, correo, contraseña))
-
+        print(f"nombre: {nombre}")
+        try:
+            # Seleccionar usuario
+            cursor.execute("SELECT * FROM Usuario WHERE nombre = ? AND email = ? AND contrasena = ? AND estado = 0", 
+                           (nombre, correo, contraseña))
             user = cursor.fetchone()
-            return redirect(url_for("/login_vendedor"))
-        else:
-            error = 'Su cuenta no existe o ya es tipo vendedor'
+            print("Try encontró usuario")
+            if user:
+                # Actualizar estado del usuario
+                cursor.execute("UPDATE Usuario SET estado = 1 WHERE nombre = ? AND email = ? AND contrasena = ?", 
+                               (nombre, correo, contraseña))
+                conn.commit()
+                print("Hubo update correctamente")
+                return redirect(url_for('login_vendedor'))
+            else:
+                error = 'Su cuenta no existe o ya es tipo vendedor'
+                return render_template('sing_up_vendedor.html', error=error)
+
+        except sqlite3.Error as e:
+            print(f"Database error: {e}")
+            error = 'Ha ocurrido un error con la base de datos'
             return render_template('sing_up_vendedor.html', error=error)
-    else:
-        return render_template('sing_up_vendedor.html')
+
+        finally:
+            conn.close()
+    
+    return render_template('sing_up_vendedor.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1433,debug=True)
