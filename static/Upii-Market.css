@@ -97,6 +97,19 @@ body{
     font-size: 40px;
     font-weight: bold;
 }
+.logout{
+    margin-top: 90px;
+    text-decoration: underline;
+}
+.btn_logout{
+    background: transparent;
+    color: white;
+    border: 0.5px solid transparent;
+    text-decoration: underline;
+}
+.btn_logout:hover{
+    cursor: pointer;
+}
 .opciones{
     display: inline-block;
     list-style-type: none;
@@ -340,6 +353,11 @@ footer{
     }
     .col{
         text-align: center;
+    }
+    .contenedor .col_1 .logout{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
     }
     .contenedor .col_1 .barra_busqueda .busqueda{
         width: 600px;

@@ -274,10 +274,14 @@ def cambiar_vendedor():
             error = 'Ha ocurrido un error con la base de datos'
             return render_template('sing_up_vendedor.html', error=error)
 
-        finally:
-            conn.close()
-    
     return render_template('sing_up_vendedor.html')
+
+@app.route('/cerrarsesion', methods=['POST'])
+@login_required
+def cerrar_sesion():
+    if 'user' in session:
+        session.pop('user', None)
+        return render_template('Upii-Market Landing.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1433,debug=True)
