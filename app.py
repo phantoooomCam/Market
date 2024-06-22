@@ -1,5 +1,8 @@
-from flask import Flask, render_template,request,redirect,url_for,session,Response
+from flask import Flask, render_template,request,redirect,url_for,session,Response, flash
 import pyodbc
+import random
+import string
+from flask_mail import Mail, Message
 from config import SQL_SERVER_CONFIG
 from flask_session import Session
 from datetime import timedelta
@@ -251,19 +254,16 @@ def cambiar_vendedor():
         correo = request.form['correo']
         contraseña = request.form['contraseña']
 
-        print(f"nombre: {nombre}")
         try:
             # Seleccionar usuario
             cursor.execute("SELECT * FROM Usuario WHERE nombre = ? AND email = ? AND contrasena = ? AND estado = 0", 
                            (nombre, correo, contraseña))
             user = cursor.fetchone()
-            print("Try encontró usuario")
             if user:
                 # Actualizar estado del usuario
                 cursor.execute("UPDATE Usuario SET estado = 1 WHERE nombre = ? AND email = ? AND contrasena = ?", 
                                (nombre, correo, contraseña))
                 conn.commit()
-                print("Hubo update correctamente")
                 return redirect(url_for('login_vendedor'))
             else:
                 error = 'Su cuenta no existe o ya es tipo vendedor'
@@ -276,12 +276,84 @@ def cambiar_vendedor():
 
     return render_template('sing_up_vendedor.html')
 
+#-----------Cerrar sesion
 @app.route('/cerrarsesion', methods=['POST'])
 @login_required
 def cerrar_sesion():
     if 'user' in session:
         session.pop('user', None)
         return render_template('Upii-Market Landing.html')
+
+#-------------Olvide contraseña
+def send_reset_email(email, token):
+    msg = Message('Restablecer Contraseña - Tu Aplicación', recipients=[email])
+    msg.body = f'''Para restablecer tu contraseña, visita el siguiente enlace:
+    {url_for('reset_password', token=token, _external=True)}
+
+    Si no solicitaste restablecer tu contraseña, ignora este mensaje y tu contraseña permanecerá sin cambios.
+    '''
+    email.send(msg)
+
+
+@app.route('/olvidecontraseña', methods=['GET','POST'])
+def olvide_contraseña():
+    if request.method == 'POST':
+        correo = request.form['email']
+        
+        # Verifica si el correo electrónico existe en tu base de datos
+        try: 
+            cursor.execute("SELECT * FROM Usuario WHERE nombre = ? AND email = ? AND contrasena = ? AND estado = 0", 
+                           (correo))
+            user = cursor.fetchone()
+            
+            # Aquí deberías agregar lógica para verificar y obtener el usuario por su correo electrónico
+            # Por simplicidad, asumiré que obtienes el usuario de alguna manera
+            
+            # Generar un token temporal para restablecer la contraseña
+            token = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(20))
+            
+            # Envía el correo electrónico con el enlace para restablecer la contraseña
+            send_reset_email(correo, token)
+            flash('Se ha enviado un correo electrónico con instrucciones para restablecer la contraseña.', 'success')
+            
+        except sqlite3.Error as e:
+            print(f"Database error: {e}")
+            error = 'Ha ocurrido un error con la base de datos'
+            return render_template('Iniciar Sesion.html', error=error)
+
+        return redirect(url_for('login'))
+    
+    return render_template('recuperar_contraseña.html')
+
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password():
+    if 'reset_email' in session and 'reset_token' in session:
+        correo = session['reset_email']
+        token = session['reset_token']
+        
+        if request.method == 'POST':
+            password = request.form['password']
+            confirm_password = request.form['confirm_password']
+            
+            if password == confirm_password:
+                # Aquí deberías actualizar la contraseña en tu base de datos
+                # Por simplicidad, imprimiré un mensaje de éxito
+                print(f"Contraseña restablecida para {correo}: {password}")
+                
+                # Limpia las variables de sesión después de restablecer la contraseña
+                session.pop('reset_email')
+                session.pop('reset_token')
+                
+                flash('Contraseña restablecida con éxito. Inicia sesión con tu nueva contraseña.', 'success')
+                return redirect(url_for('login'))
+            else:
+                flash('Las contraseñas no coinciden.', 'error')
+        
+        return render_template('recuperar_contraseña.html', token=token)
+    else:
+        flash('No se ha solicitado un restablecimiento de contraseña válido.', 'error')
+        return redirect(url_for('olvide_contraseña'))
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1433,debug=True)
