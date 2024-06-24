@@ -11,8 +11,75 @@
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='recuperar_contraseña.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
     </head>
     <main>
-        
+        <body>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="btn-regresar">
+                            <button class="regresar"><i class="bi bi-arrow-left"></i></button>
+                        </div>
+                        <form action="/olvidecontraseña" class="form" method="POST">
+                            <div class="label_formulario">
+                                <div class="label_form">
+                                    <label for="">Confirmar correo electronico</label>
+                                </div>
+                                <div class="form_input">
+                                    <input type="email" name='email' placeholder="correo electronico">
+                                </div>
+                            </div>
+                            <div class="label_formulario">
+                                <div class="label_form">
+                                    <label for="">Solicitar token</label>
+                                </div>
+                                <div class="form_input form-token">
+                                    <button class="enviar-token">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                        <form action="" class="form">
+                            <div class="label_formulario">
+                                <div class="label_form">
+                                    <label for="">Confirmar token</label>
+                                </div>
+                                <div class="form_input">
+                                    <input type="number" placeholder="token">
+                                </div>
+                            </div>
+                            <div class="label_formulario">
+                                <div class="form_input btn-recuperar">
+                                    <button class="Recuperar">Recuperar contraseña</button>
+                                </div>
+                            </div>
+                        </form>
+                        <form action="">
+                            <div class="label_formulario">
+                                <div class="label_form">
+                                    <label for="">Escribe tu nueva contraseña</label>
+                                </div>
+                                <div class="form_input">
+                                    <input type="password" placeholder="contraseña">
+                                </div>
+                            </div>
+                            
+                            <div class="label_formulario">
+                                <div class="form_input btn-recuperar">
+                                    <button class="Recuperar">Aceptar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-8">
+                        <div class="container-fluid d-flex justify-content-center align-items-center full-height side_right">
+                            <h1>Recuperar contraseña</h1>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <script src="{{ url_for('static', filename='recuperar_contraseña.js')}}"></script>
+        </body>
     </main>
 </html>

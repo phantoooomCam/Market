@@ -59,3 +59,15 @@ document.getElementById("botonRegresar").addEventListener("click", function() {
     // Redirigir a la página anterior
     window.history.back();
 });
+document.addEventListener("DOMContentLoaded", function(){
+    var btn = document.querySelector(".reset-password");
+    var btn1 = document.querySelector(".regresar");
+    
+    btn.addEventListener("click", function(){
+        window.location.href="/olvidecontraseña"
+    })
+
+    btn1.addEventListener("click", function(){
+        window.location.href="/"
+    })
+})

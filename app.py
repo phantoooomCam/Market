@@ -9,7 +9,6 @@ from datetime import timedelta
 from datetime import datetime
 from functools import wraps
 
-import sqlite3
 
 #Configuracion de imagenes
 UPLOAD_FOLDER = 'path/to/upload/folder'  # Ruta donde se guardarán las imágenes
@@ -25,6 +24,9 @@ app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_PERMANENT'] = True
 app.config['SESSION_COOKIE_SECURE'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
+
+# Configuración de correo electrónico
+mail = Mail(app)
 
 #Configuracion de requerimiento de sesion-------------------------------------------
 def login_required(f):
@@ -302,26 +304,31 @@ def olvide_contraseña():
         
         # Verifica si el correo electrónico existe en tu base de datos
         try: 
-            cursor.execute("SELECT * FROM Usuario WHERE nombre = ? AND email = ? AND contrasena = ? AND estado = 0", 
+            cursor.execute("SELECT * FROM Usuario WHERE email = ?", 
                            (correo))
             user = cursor.fetchone()
             
-            # Aquí deberías agregar lógica para verificar y obtener el usuario por su correo electrónico
-            # Por simplicidad, asumiré que obtienes el usuario de alguna manera
-            
-            # Generar un token temporal para restablecer la contraseña
-            token = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(20))
-            
-            # Envía el correo electrónico con el enlace para restablecer la contraseña
-            send_reset_email(correo, token)
-            flash('Se ha enviado un correo electrónico con instrucciones para restablecer la contraseña.', 'success')
+            print("Capture los datos")
+            if user:
+                id_user = user[0]
+                print("Existe el usuario")
+                # Generar un token temporal para restablecer la contraseña
+                token = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(20))
+
+                cursor.execute("INSERT INTO Token (nombre, id_email) VALUES (?, ?)", (token, id_user))
+                conn.commit()
+                flash('Tu contraseña ha sido restablecida exitosamente.', 'success')
+                
+                # Envía el correo electrónico con el enlace para restablecer la contraseña
+                send_reset_email(correo, int(token))
+                flash('Se ha enviado un correo electrónico con instrucciones para restablecer la contraseña.', 'success')
             
         except sqlite3.Error as e:
             print(f"Database error: {e}")
             error = 'Ha ocurrido un error con la base de datos'
             return render_template('Iniciar Sesion.html', error=error)
 
-        return redirect(url_for('login'))
+        return redirect(url_for('/iniciar_sesion'))
     
     return render_template('recuperar_contraseña.html')
 
@@ -352,7 +359,7 @@ def reset_password():
         return render_template('recuperar_contraseña.html', token=token)
     else:
         flash('No se ha solicitado un restablecimiento de contraseña válido.', 'error')
-        return redirect(url_for('olvide_contraseña'))
+        return redirect(('/iniciar_sesion'))
 
 
 if __name__ == '__main__':

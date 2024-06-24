@@ -1,0 +1,97 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: DM Sans, sans-serif;
+    font-size: 18px;
+    background-color: #ACACBD;
+}
+.container {
+    height: 100%;
+}
+.full-height {
+    height: 100vh;
+}
+.side_right {
+    background-image: url("recuperar_contraseña.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.form-container form {
+    width: 100%;
+}
+.btn-regresar{
+    margin-top: 15px;
+    left: -30px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    background-color: rgba(250, 250, 250, 0.5);
+    padding-left: 25px;
+    width: 350px;
+    margin-top: 10px;
+    margin-left: 50px;
+    border-radius: 8px;
+}
+.label_formulario{
+    margin: 10px 0;
+}
+.label_form{
+    margin-bottom: 5px;
+}
+.form-token{
+    margin-left: 70px;
+}
+input{
+    height: 40px;
+    width: 260px;
+    border-radius: 5px;
+    border: 1.5px solid black;
+    padding-left: 20px;
+}
+.btn-recuperar{
+    text-align: center;
+    padding-right: 20px;
+}
+.Recuperar{
+    width: 250px;
+    height: 50px;
+    color: white;
+    background: #5858D9;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.Recuperar:hover, .enviar-token:hover{
+    background: #4A4ADC;
+}
+.enviar-token{
+    width: 150px;
+    height: 50px;
+    color: white;
+    background: #5858D9;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.regresar{
+    background: transparent;
+    color: black;
+    border: none;
+    font-weight: 500;
+    font-size: 40px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Ocultar los controles de número en Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
