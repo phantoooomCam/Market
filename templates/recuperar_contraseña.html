@@ -40,13 +40,13 @@
                                 </div>
                             </div>
                         </form>
-                        <form action="" class="form">
+                        <form action="/get_token" class="form" method="POST">
                             <div class="label_formulario">
                                 <div class="label_form">
                                     <label for="">Confirmar token</label>
                                 </div>
                                 <div class="form_input">
-                                    <input type="number" placeholder="token">
+                                    <input type="number" name='token' placeholder="token">
                                 </div>
                             </div>
                             <div class="label_formulario">
@@ -55,13 +55,22 @@
                                 </div>
                             </div>
                         </form>
-                        <form action="">
+                        {% if mostrar_form %}
+                        <form action="/reset_password/token" method="post">
+                            <div class="label_formulario">
+                                <div class="label_form">
+                                    <label for="">Correo electronico</label>
+                                </div>
+                                <div class="form_input">
+                                    <input type="email" name='correo' placeholder="contraseña" >
+                                </div>
+                            </div>
                             <div class="label_formulario">
                                 <div class="label_form">
                                     <label for="">Escribe tu nueva contraseña</label>
                                 </div>
                                 <div class="form_input">
-                                    <input type="password" placeholder="contraseña">
+                                    <input type="password" name='new_password' placeholder="contraseña">
                                 </div>
                             </div>
                             
@@ -71,6 +80,7 @@
                                 </div>
                             </div>
                         </form>
+                        {% endif %}
                     </div>
                     <div class="col-12 col-md-6 col-lg-8">
                         <div class="container-fluid d-flex justify-content-center align-items-center full-height side_right">
