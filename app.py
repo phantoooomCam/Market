@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request,redirect,url_for,session,Response, flash
+from flask import Flask, render_template,request,redirect,url_for,session,Response, flash, make_response
 import pyodbc
 import random
 import string
@@ -35,6 +35,16 @@ app.config['MAIL_PASSWORD'] = 'uiaw ecpy bipq xeat'  # Cambia esto por tu contra
 app.config['MAIL_DEFAULT_SENDER'] = 'upiimarket@gmail.com'
 
 mail = Mail(app)
+
+def nocache(view):
+    @wraps(view)
+    def no_cache(*args, **kwargs):
+        response = make_response(view(*args, **kwargs))
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+        return response
+    return no_cache
 
 #Configuracion de requerimiento de sesion-------------------------------------------
 def login_required(f):
@@ -74,10 +84,12 @@ cursor = conn.cursor()
 #-----------------------------------------------------------------
 #Direcciones Paginas web
 @app.route('/',methods=['GET','POST'])
+@nocache
 def index():
     return render_template('Upii-Market Landing.html')
 
 @app.route('/registrarse', methods=['GET', 'POST'])
+@nocache
 def registrarse():
     if request.method == 'POST':
         nombre = request.form['nombre']
@@ -97,6 +109,7 @@ def registrarse():
 
 
 @app.route('/principal',methods=['GET','POST'])
+@nocache
 def principal():
     user = session.get('user')
     if user:
@@ -106,6 +119,7 @@ def principal():
 
 
 @app.route('/iniciar_sesion', methods=['GET', 'POST'])
+@nocache
 def iniciar_sesion():
     if request.method == 'POST':
         email = request.form['email']
@@ -288,6 +302,7 @@ def cambiar_vendedor():
 
 #-----------Cerrar sesion
 @app.route('/cerrarsesion', methods=['POST'])
+@nocache
 @login_required
 def cerrar_sesion():
     if 'user' in session:
