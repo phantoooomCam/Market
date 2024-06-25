@@ -84,25 +84,23 @@ cursor = conn.cursor()
 #-----------------------------------------------------------------
 #Direcciones Paginas web
 @app.route('/',methods=['GET','POST'])
-@nocache
 def index():
     return render_template('Upii-Market Landing.html')
 
 @app.route('/registrarse', methods=['GET', 'POST'])
-@nocache
 def registrarse():
     if request.method == 'POST':
         nombre = request.form['nombre']
         apellidos = request.form['apellidos']
         telefono = request.form['telefono']
         matricula = request.form['matricula']
-        carrera = request.form['carrera']
+        cuenta = request.form['cuenta']
         email = request.form['email']
         password = request.form['password']
         estado = 0
         
-        query="INSERT INTO Usuario (nombre, apellido, telefono, matricula, carrera, email, contrasena, estado) VALUES (?, ?, ?, ?, ?, ?, ?, 0)"
-        cursor.execute(query, (nombre, apellidos, int(telefono), int(matricula), carrera, email, password))
+        query="INSERT INTO Usuario (nombre, apellido, telefono, matricula, cuenta, email, contrasena, estado) VALUES (?, ?, ?, ?, ?, ?, ?, 0)"
+        cursor.execute(query, (nombre, apellidos, int(telefono), int(matricula), cuenta, email, password))
         conn.commit()  
         
     return render_template('Registrarse.html')
@@ -118,8 +116,17 @@ def principal():
         return redirect(url_for('iniciar_sesion'))
 
 
-@app.route('/iniciar_sesion', methods=['GET', 'POST'])
+@app.route('/vendedor',methods=['GET','POST'])
+@login_required
 @nocache
+def vendedor():
+    user = session.get('user')
+    if user:
+        return render_template('Upii-Market Vendedor.html')
+    else:
+        return redirect(url_for('iniciar_sesion'))
+
+@app.route('/iniciar_sesion', methods=['GET', 'POST'])
 def iniciar_sesion():
     if request.method == 'POST':
         email = request.form['email']
@@ -129,7 +136,6 @@ def iniciar_sesion():
         cursor.execute(query, (email, password))
         
         user = cursor.fetchone()
-
         if user:
             session['user']={
                 'id':user[0],
@@ -137,17 +143,21 @@ def iniciar_sesion():
                 'apellido': user[2],
                 'telefono': user[3],
                 'matricula': user[4],
-                'carrera': user[5],
+                'cuenta': user[5],
                 'email': user[6],
                 'estado': user[7]
-
             }
-            return redirect(url_for('principal'))
-        if user:
+        if user[5] == 'Comprador':
             column_names = [column[0] for column in cursor.description]
             user_data = dict(zip(column_names, user))
             session['user'] = user_data
             return redirect(url_for('principal'))
+        
+        elif user[5] == 'Vendedor':
+            column_names = [column[0] for column in cursor.description]
+            user_data = dict(zip(column_names, user))
+            session['user'] = user_data
+            return redirect(url_for('vendedor'))
         else:
             error = 'Correo electrónico o contraseña incorrectos. Por favor, inténtelo de nuevo.'
             return render_template('Iniciar Sesion.html', error=error)
@@ -158,6 +168,7 @@ def iniciar_sesion():
 #Secciones Pagina Princial----------------------------------------------------\
 @app.route('/comidas',methods=['GET','POST'])
 @login_required
+@nocache
 def comidas():
     query = "SELECT * FROM Producto WHERE clasificacion = 'Comida'"
     cursor.execute(query)
@@ -166,6 +177,7 @@ def comidas():
 
 @app.route('/material',methods=['GET','POST'])
 @login_required
+@nocache
 def material():
     query = "SELECT * FROM Producto WHERE clasificacion = 'Material'"
     cursor.execute(query)
@@ -174,6 +186,7 @@ def material():
 
 @app.route('/snacks',methods=['GET','POST'])
 @login_required
+@nocache
 def snacks():
     query = "SELECT * FROM Producto WHERE clasificacion = 'Dulces'"
     cursor.execute(query)
@@ -182,6 +195,7 @@ def snacks():
 
 @app.route('/otros',methods=['GET','POST'])
 @login_required
+@nocache
 def otros():
     query = "SELECT * FROM Producto WHERE clasificacion = 'Otros'"
     cursor.execute(query)
@@ -190,15 +204,18 @@ def otros():
 
 @app.route('/selling',methods=['GET','POST'])
 @login_required
+@nocache
 def selling():
     return render_template('Selling.html')
 @app.route('/shopping',methods=['GET','POST'])
 @login_required
+@nocache
 def shopping():
     return render_template('Shopping.html')
 
 @app.route('/agregarproducto', methods=['GET','POST'])
 @login_required
+@nocache
 def aproducto():
     if request.method == 'POST':
         producto = request.form['producto']
@@ -228,14 +245,10 @@ def aproducto():
         
     return render_template('Agregar_producto.html')
 
-@app.route('/vendedor',methods=['GET','POST'])
-@login_required
-def vendedor():
-    return render_template('Upii-Market Vendedor.html')
-
 #------------------Agregado por LALO
 @app.route('/iniciarvendedor', methods=['GET','POST'])
 @login_required
+@nocache
 def login_vendedor():
     if request.method == 'POST':
         correo = request.form['email']
@@ -272,6 +285,7 @@ def login_vendedor():
 
 @app.route('/cambiarvendedor', methods=['GET','POST'])
 @login_required
+@nocache
 def cambiar_vendedor():
     if request.method == 'POST':
         nombre = request.form['nombre']

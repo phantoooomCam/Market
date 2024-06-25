@@ -28,15 +28,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 500); // Delay de 500 milisegundos (0.5 segundos)
   });
 document.addEventListener("DOMContentLoaded", function(){
-    var btn1 = document.querySelector(".btn_upii-market");
     var btn2 = document.querySelector(".btn-home");
     var btn4 = document.querySelector(".btn-adding");
     var btn5 = document.querySelector(".btn-deleting");
     var btn6 = document.querySelector(".btn-updating");
 
-    btn1.addEventListener("click", function(){
-        window.location.href = "/principal"
-    })
     btn2.addEventListener("click", function(){
         window.location.href = "/vendedor"
     })

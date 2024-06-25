@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     //Botones de referencia en barra de navegacion
     var btn1 = document.querySelector(".btn_home");
-    var btn2 = document.querySelector(".btn_sell");
     var btn7 = document.querySelector(".btn_car");
 
     // Obtener referencia a los botones de submenus
@@ -16,12 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "/principal";
     });
     
-    // Agregar event listener a btn2
-    btn2.addEventListener("click", function() {
-        // Redireccionar a otro archivo HTML
-        window.location.href = "/iniciarvendedor";
-    });
-
     // Agregar event listener a btn2
     btn3.addEventListener("click", function() {
         // Redireccionar a otro archivo HTML

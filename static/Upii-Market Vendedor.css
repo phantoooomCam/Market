@@ -105,6 +105,9 @@ h3 {
     background: url("btn-adding.jpg");
     background-size: 100% 120%;
 }
+.cuenta_icon{
+    font-size: 30px;
+}
 .btn-texto {
     display: block;
     text-align: center;
