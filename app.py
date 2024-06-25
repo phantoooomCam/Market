@@ -11,7 +11,6 @@ from functools import wraps
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 
-token_global = 0
 #Configuracion de imagenes
 UPLOAD_FOLDER = 'path/to/upload/folder'  # Ruta donde se guardarán las imágenes
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}  # Extensiones permitidas
@@ -293,7 +292,11 @@ def cambiar_vendedor():
 def cerrar_sesion():
     if 'user' in session:
         session.pop('user', None)
-        return render_template('Upii-Market Landing.html')
+    response = make_response(render_template('Upii-Market Landing.html'))
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'  # HTTP 1.1
+    response.headers['Pragma'] = 'no-cache'  # HTTP 1.0
+    response.headers['Expires'] = '0'  # Proxies
+    return response
 
 #-------------Olvide contraseña
 def send_reset_email(email, token):
@@ -334,6 +337,7 @@ def olvide_contraseña():
                 print("Se ha enviado a send_reset_email")
                 flash('Se ha enviado un correo electrónico con instrucciones para restablecer la contraseña.', 'success')
                 print("Se ha enviado a send_reset_email")
+                return render_template('recuperar_contraseña.html', mostrar_token = True)
         except sqlite3.Error as e:
             print(f"Database error: {e}")
             error = 'Ha ocurrido un error con la base de datos'
@@ -346,28 +350,26 @@ def olvide_contraseña():
 @app.route('/get_token', methods=['GET','POST'])
 def get_token():
     if request.method == 'POST':
-        Token = request.form['token']
+        Token = int(request.form['token'])
 
         # Verifica si el correo electrónico existe en tu base de datos
         try: 
             cursor.execute("SELECT * FROM Token WHERE token = ?", 
-                           (int(Token)))
+                           (Token))
             Token_data = cursor.fetchone()
             print("Existe el token")
             if Token_data:
                 print("Se habilitará el cambiar contraseña")
-                token_global = Token_data
+                session['token'] = int(Token)
 
                 return render_template('recuperar_contraseña.html', mostrar_form = True)
             else:
-                return render_template('recuperar_contraseña.html', mostrar_warning = True)
+                return render_template('recuperar_contraseña.html')
         except sqlite3.Error as e:
             print(f"Database error: {e}")
             error = 'Ha ocurrido un error con la base de datos'
             return render_template('Iniciar Sesion.html', error=error)
 
-        return render_template('recuperar_contraseña.html')
-    
     return render_template('recuperar_contraseña.html')
 
 @app.route('/reset_password/token', methods=['GET', 'POST'])
@@ -375,31 +377,36 @@ def reset_password():
     if request.method == 'POST':
         nueva = request.form['new_password']
         correo = request.form['correo']
+        token_global = session.get('token')
 
         print(correo)
         print(nueva)
+        print(token_global)
         try:
             cursor.execute("SELECT * FROM Usuario WHERE email = ?", 
                            (correo))
             user = cursor.fetchone()
 
             if user:
-                cursor.execute("SELECT * FROM Token WHERE token = ?", (int(token_global)))
+                cursor.execute("SELECT * FROM Token WHERE token = ?",
+                                (token_global))
                 token_data = cursor.fetchone()
+                print(type(token_data))
                 id_user = user[0]
                 print(f"Existe el usuario {id_user}")
                 if token_data:
                     print("Existe el token")
                     cursor.execute("UPDATE Usuario SET contrasena = ? WHERE id = ?",
-                                   (nueva, int(id_user)))
+                                    (nueva, int(id_user)))
                     conn.commit()
-                    
-                    cursor.execute("DELETE FROM Token WHERE token = ?", (int(token_data)))
+                    print("Se hizo el UPDATE")
+
+                    cursor.execute("DELETE FROM Token WHERE token = ?", (int(token_global),))
                     conn.commit()
                     # Token válido, mostrar el formulario
                     flash('Contraseña restablecida correctamente. Inicia sesión con tu nueva contraseña.', 'success')
                         
-                    return render_template('recuperar_contraseña.html', mostrar_form=True)
+                    return render_template('recuperar_contraseña.html', confirmacion=True)
             
         except sqlite3.Error as e:
             print(f"Database error: {e}")

@@ -3,6 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Upii-Market</title>
+        <meeta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -27,11 +30,6 @@
                             <samp class="material-symbols-outlined buscar_header">Search</samp>
                         </button>
                     </div>
-                    <div  class="logout">
-                        <form action="/cerrarsesion" method="POST">
-                            <button type="submit" class="btn_logout">Cerrar Sesión</button>
-                        </form>
-                    </div>
                 </div>
             </div>   
             <div class="fila">
@@ -39,9 +37,9 @@
                     <li class="nav_menu_lista"><button class="btn_home"><span class="material-symbols-outlined home_icon">
                         home
                         </span><span class="desc_icon">Menú</span></button></li>
-                    <li class="nav_menu_lista"><button class="btn_account"><span class="material-symbols-outlined cuenta_icon">
-                        account_circle
-                        </span><span class="desc_icon">profile</span></button></li>
+                    <li class="nav_menu_lista"><form action="/cerrarsesion" method="POST"><button type="submit" class="btn_account"><span class="material-symbols-outlined cuenta_icon">
+                        logout 
+                        </span><span class="desc_icon">Cerrar Sesión</span></button></form></li>
                     <li class="nav_menu_lista"><button class="btn_car"><span class="material-symbols-outlined car_icon">
                         shopping_cart
                         </span><span class="desc_icon">Carrito</span></button></li>
