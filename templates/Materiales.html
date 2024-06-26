@@ -41,18 +41,22 @@
         <br><br><br><br><br>
         <div class="contenedor_main">
             {% for producto in productos %}
-            <!--
-            <div class="contenedor_main">
-                {% for producto in productos %}
                 <div class="columna_main">
                     <div class="contenedor_producto">
                         <div class="columna__ col1">
-                            <img src="data:image/jpeg;base64,{{ producto.imagen }}" alt="{{ producto.nombre }}" class="img_prod">
+                            {% if producto.imagen %}
+                                <img src="data:image/jpeg;base64,{{ producto.imagen|b64encode }}" alt="{{ producto.nombre }}" class="img_prod">
+                            {% else %}
+                                <p>No hay imagen disponible</p>
+                            {% endif %}
+                        </div>
+                        <div class="columna__ col2">
+                            <h2>{{ producto.nombre }}</h2>
+                            <p>Precio: {{ producto.precio }}</p>
+                            <p>Disponibilidad: {{ producto.dispo }}</p>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-            </div>-->
             {% endfor %}
         </div>
         <br><br>

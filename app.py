@@ -10,6 +10,8 @@ from datetime import datetime
 from functools import wraps
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
+import base64
+
 
 #Configuracion de imagenes
 UPLOAD_FOLDER = 'path/to/upload/folder'  # Ruta donde se guardarán las imágenes
@@ -86,6 +88,11 @@ cursor = conn.cursor()
 @app.route('/',methods=['GET','POST'])
 def index():
     return render_template('Upii-Market Landing.html')
+
+# Filtro personalizado para convertir a base64
+@app.template_filter('b64encode')
+def b64encode_filter(data):
+    return base64.b64encode(data).decode('utf-8')
 
 @app.route('/registrarse', methods=['GET', 'POST'])
 def registrarse():
@@ -170,7 +177,7 @@ def iniciar_sesion():
 @login_required
 @nocache
 def comidas():
-    query = "SELECT * FROM Producto WHERE clasificacion = 'Comida'"
+    query = "SELECT idproducto, nombre, clasificacion, precio, dispo, imagen FROM Producto WHERE clasificacion = 'Comida'"
     cursor.execute(query)
     productos = cursor.fetchall()
     return render_template('Comidas.html', productos=productos)
@@ -179,7 +186,7 @@ def comidas():
 @login_required
 @nocache
 def material():
-    query = "SELECT * FROM Producto WHERE clasificacion = 'Material'"
+    query = "SELECT idproducto, nombre, clasificacion, precio, dispo, imagen FROM Producto WHERE clasificacion = 'Material'"
     cursor.execute(query)
     productos = cursor.fetchall()
     return render_template('Materiales.html', productos=productos)
@@ -188,7 +195,7 @@ def material():
 @login_required
 @nocache
 def snacks():
-    query = "SELECT * FROM Producto WHERE clasificacion = 'Dulces'"
+    query = "SELECT idproducto, nombre, clasificacion, precio, dispo, imagen FROM Producto WHERE clasificacion = 'Snack'"
     cursor.execute(query)
     productos = cursor.fetchall()
     return render_template('Snacks.html', productos=productos)
@@ -197,7 +204,7 @@ def snacks():
 @login_required
 @nocache
 def otros():
-    query = "SELECT * FROM Producto WHERE clasificacion = 'Otros'"
+    query = "SELECT idproducto, nombre, clasificacion, precio, dispo, imagen FROM Producto WHERE clasificacion = 'Otros'"
     cursor.execute(query)
     productos = cursor.fetchall()
     return render_template('Otros.html', productos=productos)
@@ -443,6 +450,8 @@ def reset_password():
             return render_template('Iniciar Sesion.html', error=error)
 
     return render_template('recuperar_contraseña.html')
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1433,debug=True)

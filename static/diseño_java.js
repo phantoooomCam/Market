@@ -56,8 +56,8 @@ inputs.forEach((input)=>{
 }); 
 
 document.getElementById("botonRegresar").addEventListener("click", function() {
-    // Redirigir a la página anterior
-    window.history.back();
+    
+    window.location.href="/"
 });
 document.addEventListener("DOMContentLoaded", function(){
     var btn = document.querySelector(".reset-password");
