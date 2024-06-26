@@ -133,6 +133,17 @@ def vendedor():
     else:
         return redirect(url_for('iniciar_sesion'))
 
+@app.route('/admin',methods=['GET','POST'])
+@login_required
+@nocache
+def admin():
+    user = session.get('user')
+    if user:
+        return render_template('Upii-Market Admin.html')
+    else:
+        return redirect(url_for('iniciar_sesion'))
+
+
 @app.route('/iniciar_sesion', methods=['GET', 'POST'])
 def iniciar_sesion():
     if request.method == 'POST':
@@ -165,6 +176,13 @@ def iniciar_sesion():
             user_data = dict(zip(column_names, user))
             session['user'] = user_data
             return redirect(url_for('vendedor'))
+        
+        elif user[5] == 'Administrador':
+            column_names = [column[0] for column in cursor.description]
+            user_data = dict(zip(column_names, user))
+            session['user'] = user_data
+            return redirect(url_for('admin'))
+        
         else:
             error = 'Correo electrónico o contraseña incorrectos. Por favor, inténtelo de nuevo.'
             return render_template('Iniciar Sesion.html', error=error)
