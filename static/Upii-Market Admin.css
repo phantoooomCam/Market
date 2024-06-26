@@ -57,6 +57,7 @@ body{
     width: 80%;
     background-color: #ffffff;
     box-sizing: 30px;
+    margin-top: 120px;
 
     .tabla_header{
         display: flex;

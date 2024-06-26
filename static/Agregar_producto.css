@@ -121,6 +121,9 @@ form{
 .btn_confirmacion:hover{
     background: #232125;
 }
+.formulario_input{
+    padding-left: 15px;
+}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none; /* Quita la apariencia predeterminada del botón */

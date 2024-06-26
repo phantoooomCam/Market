@@ -431,6 +431,25 @@ def get_token():
             return render_template('Iniciar Sesion.html', error=error)
 
     return render_template('recuperar_contraseña.html')
+@app.route('/agregar_admin', methods=['GET','POST'])
+@nocache
+@login_required
+def add_admin():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        telefono = request.form['telefono']
+        matricula = request.form['matricula']
+        email = request.form['email']
+        contraseña = request.form['contraseña']
+        cuenta = 'Administrador'
+        estado = 0
+
+        query ="INSERT INTO Usuario (nombre, apellido, telefono, matricula, cuenta,email, contrasena, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+        cursor.execute(query,(nombre, apellido, telefono, matricula, cuenta, email, contraseña, estado))
+        conn.commit()
+
+    return render_template('Agregar_admin.html')
 
 @app.route('/reset_password/token', methods=['GET', 'POST'])
 def reset_password():

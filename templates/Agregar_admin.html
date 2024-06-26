@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Upii-Market/Agregar Producto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Agregar_producto.css')}}">
+</head>
+<body>
+    <div class="contenedor2"></div>  
+    <div class="cont">
+        <div class="contenedor"></div>
+        <form action="/agregar_admin" method="POST">
+            <div class="header_form">
+                <button class="btn_back"><span class="material-symbols-outlined">arrow_back</span></button>
+                <h1>Agregar Admin</h1>
+            </div>
+            <div class="con">
+                <div class="columna1">    
+                    <!-- Grupo: nombre -->
+                    <div class="formulario_grupo" id="grupo_producto">
+                        <label for="producto" class="formulario_label">nombre</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input producto" id="producto" name="nombre" type="text" placeholder="nombre" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                    </div>
+
+                    <!-- Grupo: Apellido -->
+                    <div class="formulario_grupo" id="grupo_precio">
+                        <label for="precio" class="formulario_label">apellido</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input precio" id="precio" name="apellido" type="text" placeholder="apellido" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Grupo: telefono -->
+                    <div class="formulario_grupo" id="grupo_clasificacion">
+                        <label for="clasificacion" class="formulario_label">telefono</label>
+                        <div class="formulario_clasificacion-input">
+                            <input class="formulario_input precio" id="precio" name="telefono" type="tel" placeholder="telefono" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="columna2">
+                        
+                    <!-- Grupo: Matricula -->
+                    <div class="formulario_grupo" id="grupo_oferta">
+                        <label for="disponibilidad" class="formulario_label">matricula</label>
+                        <div class="formulario_grupo-input">    
+                            <input class="formulario_input disponibilidad" id="matricula" name="matricula" type="number" placeholder="matricula" required>
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                    </div>
+                        <!-- Grupo: Email -->
+                            <div class="formulario_grupo imagenes_grupo" id="grupo_imagenes">
+                                <label for="imagenes" class="formulario_label">correo electronico</label>
+                                <div class="formulario_grupo-input">
+                                    <input class="formulario_input precio" type="email" name="email" id="imagenes" placeholder="correo electronico">    
+                                </div>
+                            </div>
+                        
+                        <!-- Grupo: Contraseña -->
+                        <div class="formulario_grupo imagenes_grupo" id="grupo_imagenes">
+                            <label for="imagenes" class="formulario_label">contraseña</label>
+                            <div class="formulario_grupo-input">
+                                <input class="formulario_input precio" type="password" name="contraseña" id="imagenes" placeholder="contraseña">    
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="confirmacion">
+                        <button class="btn_confirmacion">Agregar</button>
+                        <p class="msj_confirmacion"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='agregar_admin.js')}}"></script>
+    </body>
+</html>

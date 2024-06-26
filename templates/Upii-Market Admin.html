@@ -36,7 +36,7 @@
     <div class="contenedor">
         <div class="tabla_header">
             <h2>mis usuarios</h2>
-            <button class="agregar btn_agregar">Agregar</button>
+            <button class="agregar btn_agregar_admin">Agregar</button>
         </div>
         <table>
             <thead>
@@ -69,7 +69,7 @@
     
         <div class="tabla_header">
             <h2>todos los productos</h2>
-            <button class="agregar btn_agregar">Agregar</button>
+            <button type="submit" class="agregar btn_agregar">Agregar</button>
         </div>
         <table>
             <thead>
@@ -96,5 +96,6 @@
             </tbody>
         </table>    
     </div>
+    <script src="{{ url_for('static', filename='admin.js')}}"></script>
 </body>
 </html>
