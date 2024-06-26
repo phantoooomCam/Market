@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var btn3 = document.querySelector(".btn_pizza");
     var btn4 = document.querySelector(".btn_otros");
     var btn5 = document.querySelector(".btn_car");
+    var btn6 = document.querySelector(".btn-carrito");
 
     // Agregar event listener a btn1
     btn1.addEventListener("click", function() {
@@ -34,6 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
     btn5.addEventListener("click", function(){
         window.location.href="/shopping";
     })
+
+    btn6.addEventListener("click", function(){
+        window.location.href="/snacks"
+    });
 });
 document.addEventListener("DOMContentLoaded", function() {
     var imagenes = document.querySelectorAll('.img_prod');
@@ -119,3 +124,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     escribirPrimerTexto();
 });
+
+

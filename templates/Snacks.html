@@ -49,27 +49,32 @@
             </header>
             <main>
                 <br><br><br><br><br>
-                <div class="productos">
-                    <div class="contenedor2">
-                        {% for producto in productos %}
-                            <div class="producto">
-                                <div class="info">
-                                    <h2 class="producto_titulo">{{ producto.nombre }}</h2>
-                                    <p>Precio: {{ producto.precio }}</p>
-                                    <p>Disponibilidad: {{ producto.dispo }}</p>
-                                    <button type="submit" class="btn-carrito">Agregar al carrito</button>
+                <form action="/shopping" class="formularioo" method="POST">
+                    <div class="productos">
+                        <div class="contenedor2">
+                            {% for producto in productos %}
+                                <div class="producto">
+                                    <div class="info">
+                                        <h2 class="producto_titulo">{{ producto.nombre }}</h2>
+                                        <p>Precio: {{ producto.precio }}</p>
+                                        <p>Disponibilidad: {{ producto.dispo }}</p>
+                                        <input type="hidden" name="nombre" value="{{ producto.nombre }}">
+                                        <input type="hidden" name="precio" value="{{ producto.precio }}">
+                                        <input type="hidden" name="dispo" value="{{ producto.dispo }}">
+                                        <button type="submit" class="btn-carrito">Agregar al carrito</button>
+                                    </div>
+                                    {% if producto.imagen %}
+                                    <div class="imgn">
+                                        <img class="img" src="data:image/jpeg;base64,{{ producto.imagen|b64encode }}" alt="{{ producto.nombre }}">
+                                    {% else %}
+                                        <p>No hay imagen disponible</p>
+                                    {% endif %}
+                                    </div>
                                 </div>
-                                {% if producto.imagen %}
-                                <div class="imgn">
-                                    <img class="img" src="data:image/jpeg;base64,{{ producto.imagen|b64encode }}" alt="{{ producto.nombre }}">
-                                {% else %}
-                                    <p>No hay imagen disponible</p>
-                                {% endif %}
-                                </div>
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
+                </form>
                 <br><br>
             </main>
             <script src="{{ url_for('static', filename='redireccionamiento_submenus4.js') }}"></script>
