@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Upii-Market/Vendedor</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Upii-Market Admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand admin" href="#">Administrador</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <form action="/admin" method="post"><button class="op" type="submit">menú</button></form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/cerrarsesion" method="post"><button class="op" type="submit">cerrar sesión</button></form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contenedor">
+        <div class="tabla_header">
+            <h2>mis usuarios</h2>
+            <button class="agregar btn_agregar">Agregar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>email</th>
+                    <th>telefono</th>
+                    <th>cuenta</th>
+                    <th>matricula</th>
+                    <th>acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>nombre</td>
+                    <td>apellido</td>
+                    <td>email</td>
+                    <td>telefono</td>
+                    <td>cuenta</td>
+                    <td>matricula</td>
+                    <td><button><i class="bi bi-pencil"></i></button><i class="bi bi-trash3-fill"></i><button></button></td>
+                </tr>
+            </tbody>
+        </table>    
+    
+        <div class="tabla_header">
+            <h2>todos los productos</h2>
+            <button class="agregar btn_agregar">Agregar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>producto</th>
+                    <th>clasificación</th>
+                    <th>precio</th>
+                    <th>disponibilidad</th>
+                    <th>imagen</th>
+                    <th>id Vendedor</th>
+                    <th>acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>producto</td>
+                    <td>clasificación</td>
+                    <td>precio</td>
+                    <td>disponibilidad</td>
+                    <td>imagen</td>
+                    <td>id Vendedor</td>
+                    <td><button><i class="bi bi-pencil"></i></button><i class="bi bi-trash3-fill"></i><button></button></td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+</body>
+</html>
