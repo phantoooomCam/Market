@@ -15,8 +15,16 @@ main {
 }
 .contenedor {
     display: flex;
-    width: 100%;
-    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor2{
+    flex-direction: column;
+}
+.productos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .columna {
     flex: 1;
@@ -60,6 +68,32 @@ main {
     padding-bottom: 0.5px;
     padding-left: 32px;
 }
+.producto{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: DM Sans, sans-serif;
+    flex-direction: row-reverse;
+}
+.info{
+    line-height: 20px;
+    padding-right: 10px;
+}
+.imgn{
+    height: 200px;
+    width: 400px;
+}
+.imgn img{
+    max-width: 70%;
+    max-height: 100%;
+}
+.producto_titulo{
+    font-weight: 700;
+}
 h3 {
     text-align: center;
     padding-left: 70px;
@@ -95,6 +129,20 @@ h3 {
     text-align: center;
     cursor: pointer;
     transition: .5s;
+}
+.btn-carrito{
+    color: white;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    background: #15C25C;
+    padding: 10px 25px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.btn-carrito:hover{
+    background: #10A24C;
+    cursor: pointer;
 }
 .buscar_header {
     color: white;
@@ -190,15 +238,9 @@ h3 {
     padding-right: 50px;
     width: 50%;
 }
-<<<<<<< HEAD
 .col1 img{
     width: 370px;
     height: 270px;
-=======
-.col1 img {
-    width: auto;
-    height: auto;
->>>>>>> 5de5d8312e69ea69da703326c573e199847c29f8
 }
 .col2 {
     text-align: left;
