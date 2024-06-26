@@ -56,10 +56,9 @@ main {
     width: 100%;
 }
 .titulo_otros {
-    background: url("otros5.jpg");
+    background:gray ;
     text-align: center;
     width: 100%;
-    color: #708090;
     background-size: 100% 100%;
 }
 .nombre_submenus {
