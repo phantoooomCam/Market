@@ -133,13 +133,19 @@ def vendedor():
     else:
         return redirect(url_for('iniciar_sesion'))
 
-@app.route('/admin',methods=['GET','POST'])
+@app.route('/admin', methods=['GET', 'POST'])
 @login_required
 @nocache
 def admin():
     user = session.get('user')
     if user:
-        return render_template('Upii-Market Admin.html')
+        query = "SELECT idproducto, nombre, clasificacion, precio, dispo, imagen FROM Producto"
+        cursor.execute(query)
+        productos = cursor.fetchall()
+        query2 = "SELECT id,nombre,apellido,telefono,matricula,cuenta,email,contrasena,estado FROM Usuario"
+        cursor.execute(query2)
+        usuarios= cursor.fetchall()
+        return render_template('Upii-Market Admin.html', productos=productos,usuarios=usuarios)
     else:
         return redirect(url_for('iniciar_sesion'))
 

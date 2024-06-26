@@ -52,16 +52,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>nombre</td>
-                    <td>apellido</td>
-                    <td>email</td>
-                    <td>telefono</td>
-                    <td>cuenta</td>
-                    <td>matricula</td>
-                    <td><button><i class="bi bi-pencil"></i></button><i class="bi bi-trash3-fill"></i><button></button></td>
-                </tr>
+                {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{ usuario.id}}</td>
+                        <td>{{ usuario.nombre}}</td>
+                        <td>{{ usuario.apellido}}</td>
+                        <td>{{ usuario.email}}</td>
+                        <td>{{ usuario.telefono}}</td>
+                        <td>{{ usuario.cuenta}}</td>
+                        <td>{{ usuario.matricula}}</td>
+                        <td><button><i class="bi bi-pencil"></i></button><i class="bi bi-trash3-fill"></i><button></button></td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>    
     
@@ -77,22 +79,20 @@
                     <th>clasificación</th>
                     <th>precio</th>
                     <th>disponibilidad</th>
-                    <th>imagen</th>
-                    <th>id Vendedor</th>
                     <th>acción</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>producto</td>
-                    <td>clasificación</td>
-                    <td>precio</td>
-                    <td>disponibilidad</td>
-                    <td>imagen</td>
-                    <td>id Vendedor</td>
-                    <td><button><i class="bi bi-pencil"></i></button><i class="bi bi-trash3-fill"></i><button></button></td>
-                </tr>
+                {% for producto in productos %}
+                    <tr>
+                        <td>{{ producto.idproducto}}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.clasificacion }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.dispo }}</td>
+                        <td><button><i class="bi bi-pencil"></i></button><i class="bi bi-trash3-fill"></i><button></button></td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>    
     </div>
