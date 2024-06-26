@@ -1,25 +1,25 @@
-body, html{
+body, html {
     width: 100%;
     margin: 0;
     padding: 0;
 }
-main{
+main {
     background-color: #AFB0B5;
 }
-.submenus_header{
+.submenus_header {
     background: black;
     text-align: center;
     color: white;
     width: 100%;
     font-family: Raleway, sans-serif;
 }
-.contenedor{
-    display:inline-flex ;
+.contenedor {
+    display: flex;
     width: 100%;
     overflow: hidden;
 }
-.columna{
-    flex:1;
+.columna {
+    flex: 1;
     padding-left: 1px;
     padding-top: 10px;
     padding-right: 1px;
@@ -27,48 +27,48 @@ main{
     border: 1px transparent;
     width: 100%;
 }
-.buscador{
+.buscador {
     background: black;
     position: relative;
     width: 100%;
 }
-.titulo_comidas{
+.titulo_comidas {
     background: url("pizza2.jpg");
     text-align: center;
     width: 100%;
 }
-.titulo_material{
+.titulo_material {
     background: url("Material24.jpg");
     text-align: center;
     width: 100%;
 }
-.titulo_snacks{
+.titulo_snacks {
     background: url("galletas2.jpg");
     text-align: center;
     width: 100%;
 }
-.titulo_otros{
+.titulo_otros {
     background: url("otros5.jpg");
     text-align: center;
     width: 100%;
     color: #708090;
     background-size: 100% 100%;
 }
-.nombre_submenus{
+.nombre_submenus {
     font-size: 100px;
-    padding-top: 60px; 
+    padding-top: 60px;
     padding-bottom: 0.5px;
     padding-left: 32px;
 }
-h3{
+h3 {
     text-align: center;
     padding-left: 70px;
     margin-bottom: 35px;
 }
-.Upii-Market-otrosh-3{
-   font-weight: bold;
+.Upii-Market-otrosh-3 {
+    font-weight: bold;
 }
-.buscador .busqueda{
+.buscador .busqueda {
     outline: none;
     box-sizing: border-box;
     height: 61px;
@@ -80,7 +80,7 @@ h3{
     font-size: 20px;
     border: 1px solid white;
 }
-.buscador .boton_buscar{
+.buscador .boton_buscar {
     position: absolute;
     right: 0;
     top: 0;
@@ -96,38 +96,33 @@ h3{
     cursor: pointer;
     transition: .5s;
 }
-.buscar_header{
+.buscar_header {
     color: white;
-    font-size: 25px;  
-     font-variation-settings:
-   'FILL' 0,
-   'wght' 400,
-   'GRAD' 200,
-   'opsz' 48
+    font-size: 25px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 200,
+        'opsz' 48;
 }
-.fila{
+.fila {
     position: absolute;
     background: white;
     padding: 2px;
-    margin-top: 50%;
     border: 1px solid black;
     width: 100%;
     left: 0;
     right: 0;
-    padding-left: 0px;
-    margin-bottom: 0px;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
 }
-.buscador .boton_buscar:hover{
+.buscador .boton_buscar:hover {
     width: 65px;
     height: 68px;
     line-height: 20px;
     font-size: 40px;
     font-weight: bold;
 }
-.nav_menu{
+.nav_menu {
     padding: 0.5px;
     margin: 0.5px;
     color: black;
@@ -135,107 +130,109 @@ h3{
     margin-left: 0.5px;
     margin-right: 0.5px;
 }
-.nav_menu_lista{
+.nav_menu_lista {
     display: inline-block;
     list-style-type: none;
     margin-left: 60px;
     margin-right: 60px;
 }
-.btn_car, .btn_home, .btn_account, .btn_power, .btn_cake, .btn_otros, .btn_pizza{
+.btn_car, .btn_home, .btn_account, .btn_power, .btn_cake, .btn_otros, .btn_pizza {
     background-color: transparent;
     border: transparent;
     color: black;
     cursor: pointer;
 }
-.car_icon, .cuenta_icon, .home_icon, .power_icon, .cake_icon, .otros_icon, .pizza_icon{
+.car_icon, .cuenta_icon, .home_icon, .power_icon, .cake_icon, .otros_icon, .pizza_icon {
     text-align: center;
     display: block;
     margin-bottom: 5px;
     font-size: 30px;
     font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' 150,
-  'opsz' 40
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 150,
+        'opsz' 40;
 }
-.desc_icon{
+.desc_icon {
     display: block;
     text-align: center;
 }
-.contenedor_main{
-    display:inline-flex;
-    width: 90%;
+.contenedor_main {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
     color: black;
     font-family: Hind, sans-serif;
     margin-left: 70px;
     overflow: hidden;
     background-color: #AFB0B5;
 }
-.columna_main{
-    flex:1;
-    border: 4px solid #AFB0B5;
-    color: black;
-    width: 50%;
+.columna_main {
+    width: 100%;
+    margin-bottom: 20px; /* Espaciado entre los productos */
 }
-.contenedor_producto{
+.contenedor_producto {
     display: flex;
     background: #F3F3ED;
     padding: 15px;
     border-radius: 10px;
 }
-.columna__{
+.columna__ {
     flex: 1;
-    vertical-align: middle;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.col1{
+.col1 {
     position: relative;
     overflow: hidden;
     height: 100%;
-    padding-right: 200px;
-    width: 100%;
+    padding-right: 50px;
+    width: 50%;
 }
+<<<<<<< HEAD
 .col1 img{
     width: 370px;
     height: 270px;
+=======
+.col1 img {
+    width: auto;
+    height: auto;
+>>>>>>> 5de5d8312e69ea69da703326c573e199847c29f8
 }
-.col2{
+.col2 {
     text-align: left;
     vertical-align: middle;
     padding-left: 2px;
     padding-right: 2px;
 }
-.col2{
-    .producto__{
-        font-size: 19px;
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
-    .precio__{
-        font-size: 17px;
-        line-height: 1.5;
-    }
-    .vendedor__{
-        font-size: 17px;
-        line-height: 1.5;
-    }
-    .disponibilidad__{
-        font-size: 17px;
-        line-height: 1.5;
-    }
+.col2 .producto__ {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
-.opciones_imagen{
+.col2 .precio__ {
+    font-size: 17px;
+    line-height: 1.5;
+}
+.col2 .vendedor__ {
+    font-size: 17px;
+    line-height: 1.5;
+}
+.col2 .disponibilidad__ {
+    font-size: 17px;
+    line-height: 1.5;
+}
+.opciones_imagen {
     display: flex;
 }
-.opciones_imagen button{
+.opciones_imagen button {
     padding-left: 80px;
     padding-right: 79.8px;
     border: 0.5px solid black;
     cursor: pointer;
 }
-.btn_agregar_carrito{
+.btn_agregar_carrito {
     margin-top: 50px;
     cursor: pointer;
     color: black;
@@ -244,85 +241,84 @@ h3{
     border-radius: 10px;
     padding: 10px 60px;
 }
-.btn_agregar_carrito:hover{
+.btn_agregar_carrito:hover {
     background-color: #0DC54D;
 }
-footer{
+footer {
     background-color: black;
     color: white;
     text-align: center;
     font-family: Raleway, sans-serif;
     padding: 15px 15px;
 }
-@media (max-width: 1080px){
-    body{
+@media (max-width: 1080px) {
+    body {
         width: 100%;
     }
-    .contenedor{
+    .contenedor {
         display: block;
     }
-    .titulo_material{
+    .titulo_material {
         padding-bottom: 5px;
         background-size: 100% 200%;
     }
-    .titulo_comidas{
+    .titulo_comidas {
         padding-bottom: 5px;
         background-size: 100% 300%;
     }
-    .titulo_otros{
+    .titulo_otros {
         padding-bottom: 5px;
         background-size: 100% 200%;
     }
-    .titulo_snacks{
+    .titulo_snacks {
         padding-bottom: 5px;
         background-size: 100% 200%;
     }
-    .nombre_submenus{
+    .nombre_submenus {
         padding-bottom: 5px;
     }
-    .contenedor .columna .slogan{
+    .contenedor .columna .slogan {
         padding-bottom: 5px;
         font-size: 25px;
     }
-    .contenedor .buscador .busqueda{
+    .contenedor .buscador .busqueda {
         width: 580px;
         height: 70px;
         font-size: 30px;
     }
-    .contenedor .buscador .boton_buscar{
+    .contenedor .buscador .boton_buscar {
         margin-right: 65px;
         width: 65px;
         height: 70px;
         line-height: 80px;
     }
-    .fila{
+    .fila {
         display: block;
     }
-    .buscador .barra_busqueda{
+    .buscador .barra_busqueda {
         bottom: 200px;
-        margin-top: none;
     }
-    .barra_busqueda{
+    .barra_busqueda {
         padding-bottom: 15px;
     }
-    .buscador .boton_buscar{
+    .buscador .boton_buscar {
         margin-top: 60px;
         right: 130px;
     }
-    .submenus_header .fila .nav_menu .nav_menu_lista .material-symbols-outlined{
+    .submenus_header .fila .nav_menu .nav_menu_lista .material-symbols-outlined {
         font-size: 50px;
     }
-    .submenus_header .fila .nav_menu .nav_menu_lista .desc_icon{
+    .submenus_header .fila .nav_menu .nav_menu_lista .desc_icon {
         font-size: 25px;
     }
-    .nav_menu_lista{
+    .nav_menu_lista {
         margin-left: 20px;
         margin-right: 20px;
     }
-    .btn_car, .btn_cake, .btn_home, .btn_pizza, .btn_otros, .btn_power, .btn_account{
+    .btn_car, .btn_cake, .btn_home, .btn_pizza, .btn_otros, .btn_power, .btn_account {
         font-size: 15px;
     }
-    .car_icon, .pizza_icon, .power_icon, .cuenta_icon, .cake_icon, .otros_icon{
-        font-size: 30px;/*Aun no sirve pero es para aumentar el tamaño de los iconos*/
+    .car_icon, .pizza_icon, .power_icon, .cuenta_icon, .cake_icon, .otros_icon {
+        font-size: 30px; /* Aún no sirve pero es para aumentar el tamaño de los íconos */
     }
 }
